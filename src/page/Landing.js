@@ -1,9 +1,9 @@
 import React from "react";
 
-import Navbar from "../components/landing/Navbar";
-import HomeSection from "../components/landing/Jumbotron";
-import Search from "../components/landing/Search";
-import Promotion from "../components/landing/Promotion";
+import Navbar from "../components/Navbar";
+import HomeSection from "../components/Jumbotron";
+import Search from "../components/Search";
+import Promotion from "../components/Promotion";
 const Landing = () => {
   return (
     <div>

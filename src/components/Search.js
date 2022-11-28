@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/index.css";
+import "../css/index.css";
 
 const Search = () => {
   return (
@@ -26,9 +26,7 @@ const Search = () => {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md">
-                    <p>Panel View</p>
-                  </div>
+                  <div className="col-md"></div>
                 </div>
               </div>
             </div>
