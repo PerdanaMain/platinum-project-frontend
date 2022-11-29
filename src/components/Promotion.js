@@ -18,10 +18,7 @@ const Promotion = () => {
             <div className="container mt-5">
               <div className="text-center">
                 <h1>BEST DEAL</h1>
-                <p>
-                  Harga hemat dan potongan tambahan hingga Rp. 400.000 hanya di
-                  10 Desember 2022 hingga 31 Januari 2023
-                </p>
+                <p>Harga hemat dan potongan tambahan hingga Rp. 400.000 hanya di 10 Desember 2022 hingga 31 Januari 2023</p>
               </div>
               <div>
                 <img src="./assets/landing/Promo.svg" alt="" />

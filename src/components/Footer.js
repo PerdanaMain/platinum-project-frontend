@@ -24,16 +24,16 @@ const Footer = () => {
           <p class="header-ftr">Explore Us</p>
           <div class="footer-child">
             <p>
-              <a href="#">Home</a>
+              <a href="#home">Home</a>
             </p>
             <p>
-              <a href="#">Promotion</a>
+              <a href="#promotion">Promotion</a>
             </p>
             <p>
-              <a href="#">Our Services</a>
+              <a href="#our-service">Our Services</a>
             </p>
             <p>
-              <a href="#">About Us</a>
+              <a href="#testimonial">Testimonial</a>
             </p>
           </div>
         </div>
