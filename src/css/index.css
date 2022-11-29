@@ -1,4 +1,4 @@
-*{
+* {
   font-family: 'Poppins', sans-serif;
   padding: 0;
   margin: 0;
@@ -53,7 +53,7 @@ form a {
 
 /* Jumbotron */
 
-.jumbotron.background-image{
+.jumbotron.background-image {
   background-image: url('../../public/assets/landing/pesawat.svg');
   height: 400px;
 }
@@ -72,48 +72,56 @@ form a {
 
 
 /* Search Panel */
-#search-panel{
+#search-panel {
   margin-top: -50px;
-  
+
 }
-.panel-view{
+
+.panel-view {
   background-color: #fff;
 }
-.search-panel{
+
+.search-panel {
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.plane-panel{
+
+.plane-panel {
   background-color: #002561;
-  padding-top: 15px ;
+  padding-top: 15px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
 
-.plane-panel img{
+.plane-panel img {
   width: 30px;
   margin-top: 100px;
   margin-left: 20px;
 }
-.plane-panel p{
+
+.plane-panel p {
   font-size: 10px;
   margin-left: 3px;
   color: #fff;
 }
 
 
-.btn-view{
+.btn-view {
   background-color: #BABABA;
 }
-.col-md.btn-view{
+
+.col-md.btn-view {
   padding-bottom: 12px;
 }
-.point-panel-view-top-right{
+
+.point-panel-view-top-right {
   border-top-right-radius: 20px;
 }
-.point-panel-view-bottom-right{
+
+.point-panel-view-bottom-right {
   border-bottom-right-radius: 20px;
 }
+
 /* End of Search Panel */
 
 /* Promotion Banner */
@@ -122,18 +130,19 @@ form a {
 }
 
 .desc-pr {
- padding: 100px 0px 0px 50px;
+  padding: 100px 0px 0px 50px;
 
   font-weight: 500;
   font-size: 32px;
   line-height: 48px;
   color: #0a1531;
 }
+
 .desc-pr p span {
   color: #2663FF;
 }
 
-.flit-tagline{
+.flit-tagline {
   width: 352px;
   height: 63.77px;
   font-weight: 500;
@@ -142,6 +151,7 @@ form a {
   color: #0A1531;
   opacity: 0.5;
 }
+
 /*
 .btn-tagline{
   font-weight: 600;
@@ -158,16 +168,18 @@ form a {
 /* end of promotion banner */
 
 /* Our Service */
-.slides-part{
+.slides-part {
   margin-left: 50px;
   margin-right: 30px;
 }
+
 .desc-slides {
   text-align: center;
 }
+
 .desc-slides h1 {
-  font-size: 24px; 
-  font-weight: bold; 
+  font-size: 24px;
+  font-weight: bold;
   line-height: 36px;
 }
 
@@ -178,30 +190,36 @@ form a {
 .choose {
   background-color: #F9FCFC;
 }
+
 .choose h1 {
   color: #232323;
   font-weight: 700 !important;
 }
+
 .choose p {
   color: #879FB0;
 }
-.choose img{
+
+.choose img {
   margin-left: 50px;
 }
+
 .cl-blue {
   color: #0F52BA !important;
 }
+
 /* End of Cards */
 
 /* Testimonial */
-.testimonial-tagline .p-biru{
+.testimonial-tagline .p-biru {
   height: 25px;
   font-weight: 600;
   font-size: 18px;
   line-height: 140%;
   color: #3258E8;
 }
-.testimonial-tagline .p-normal{
+
+.testimonial-tagline .p-normal {
   width: 400px;
   font-weight: 700;
   font-size: 36px;
@@ -211,10 +229,11 @@ form a {
 }
 
 .details .testimonial-img {
- width: 50px;
- height: 50px;
- padding-right: 600px;
+  width: 50px;
+  height: 50px;
+  padding-right: 600px;
 }
+
 .details .name {
   font-weight: 600;
   font-size: 12px;
@@ -236,22 +255,22 @@ footer {
   height: 291px;
 }
 
-#footer{
+#footer {
   border-top: 1px #575964 solid;
 }
 
-.address img{
+.address img {
   margin-bottom: 10px;
 }
 
-.address .flit-tagline{
+.address .flit-tagline {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   width: 90%;
 }
 
-.address .flit-tagline-2{
+.address .flit-tagline-2 {
   margin-top: -50px;
   font-weight: 400;
   font-size: 16px;
@@ -262,69 +281,153 @@ footer {
 
 
 .header-ftr {
-    width: px;
-    height: 24px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
+  width: px;
+  height: 24px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
 
-    color: #152c5b;
+  color: #152c5b;
 }
 
 .footer-child p {
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
 
-    color: #575964;
+  color: #575964;
 }
 
 .footer-child p a {
-    width: 900px;
-    height: 24px;
-    text-decoration: none;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
+  width: 900px;
+  height: 24px;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
 
-    color: #575964;
+  color: #575964;
 }
 
 /* End Of Footer */
 
 /* Not Found */
-#not-found{
+#not-found {
   box-sizing: border-box;
 }
 
-.empty-4-5{
+.empty-4-5 {
   padding: 2.5rem 2rem 5rem;
 }
-.empty-4-5 .main-img{
+
+.empty-4-5 .main-img {
   object-fit: cover;
   object-position: center;
   margin-bottom: 0.5rem;
   width: 83.333333%;
 }
-.empty-4-5 .title-text{
-  font: 600 1.875rem/2.25rem Poppins, sans-serif;            
+
+.empty-4-5 .title-text {
+  font: 600 1.875rem/2.25rem Poppins, sans-serif;
   color: #272E35;
   margin-bottom: 1.25rem;
 }
-.empty-4-5 .title-caption{
+
+.empty-4-5 .title-caption {
   color: #9C9C9C;
   margin-bottom: 4rem;
   letter-spacing: 0.025em;
   line-height: 1.75rem;
 }
-.empty-4-5 .btn-back{
-  font: 600 1.125rem/1.75rem Poppins, sans-serif;            
+
+.empty-4-5 .btn-back {
+  font: 600 1.125rem/1.75rem Poppins, sans-serif;
   background-color: #FF7C57;
   padding: 1rem 1.5rem;
   border-radius: 0.75rem;
 }
-.empty-4-5 .btn-back:hover{
+
+.empty-4-5 .btn-back:hover {
   --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+
 /* End Not Found */
+
+/* Login */
+#login {
+  width: 100%;
+  height: 700px;
+  background: #FFFFFF;
+}
+
+.container-login {
+  /* box-sizing: border-box; */
+  position: relative;
+  width: 511px;
+  height: 659px;
+  left: 393px;
+  top: 100px;
+  background: #FFFFFF;
+  /* border: 1px;
+  box-shadow: 2px 2px 2px 2px rgb(0.1, 0.1, 0.1, 0.1);
+  border-radius: 24px; */
+}
+
+.ini-label {
+  width: 97.57px;
+  height: 23px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  color: #2663FF;
+}
+
+.input-group-text {
+  cursor: pointer;
+} 
+
+
+::placeholder {
+  width: 148px;
+  height: 18px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #BABABA;
+
+}
+
+.ini-span p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.ini-button p {
+  margin-top: 5px;
+  margin-left: 59px;
+  width: 48px;
+  height: 18px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.oauth-form {
+  margin-left: 140px;
+}
+
+
+.oauth button {
+  display: flex;
+  flex-direction: row;
+
+}
+/* End of Login */
