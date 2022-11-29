@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
         <div className="logo d-flex ms-5">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             <img
               src="./assets/landing/flit-4 1 (1).svg"
               alt="logo"
@@ -30,28 +30,28 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="home">
+              <a className="nav-link" href="#home">
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="ourservice" id="">
+              <a className="nav-link" href="#our-service" id="">
                 Our Services
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="#why-us">
                 Why Us
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="#testimonial">
                 Testimonial
               </a>
             </li>
           </ul>
           <form class="d-flex">
-            <a href="#">Sign Up</a>
+            <a href="/login">Sign In</a>
           </form>
         </div>
       </div>
