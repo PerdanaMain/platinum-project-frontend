@@ -360,7 +360,6 @@ footer {
 
 /* End Not Found */
 
-<<<<<<< HEAD
 /* Login */
 #login {
   width: 100%;
@@ -394,12 +393,19 @@ footer {
   cursor: pointer;
 } 
 
+input {
+  padding: 12px 23px;
+  gap: 10px;
+  width: 350px;
+  height: 42px;
+  background: #FFFFFF;
+  border: 1px solid #BABABA;
+  border-radius: 10px;
 
+}
 ::placeholder {
   width: 148px;
   height: 18px;
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
@@ -407,11 +413,12 @@ footer {
 
 }
 
-.ini-span p {
-  font-family: 'Poppins';
-  font-style: normal;
+.ini-span{
   font-weight: 400;
   font-size: 12px;
+  margin-left: 200px;
+  margin-top: -30px !important;
+  margin-bottom: -50px !important;
 }
 
 .ini-button p {
@@ -438,7 +445,7 @@ footer {
 
 }
 /* End of Login */
-=======
+
 /* Form Register */
 .logo-flit {
   margin-top: -8px;
@@ -477,4 +484,3 @@ footer {
   margin-top: 75px;
 }
 /* End Form */
->>>>>>> 220db05cb0ff9557606d8a53c2d8b50dcd3ce57f

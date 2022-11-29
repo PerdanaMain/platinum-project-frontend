@@ -10,7 +10,7 @@ const Promotion = () => {
               Terbang <span>Lebih Hemat</span> ke berbagai destinasi
             </p>
             <p className="flit-tagline">#easy way to flight</p>
-            <a className="btn-tagline">
+            <a href="/" className="btn-tagline">
               <button className="btn btn-primary ">Info Lebih Lanjut</button>
             </a>
           </div>
