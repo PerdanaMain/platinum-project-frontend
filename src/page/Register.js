@@ -1,7 +1,16 @@
 import React from "react";
+import Navbar from "../components/Navbar";
+import Register from "../components/FormRegister";
+import Footer from "../components/Footer";
 
-const Register = () => {
-  return <div>Ini Register</div>;
+const Landing = () => {
+  return (
+    <div>
+      <Navbar />
+      <Register />
+      <Footer />
+    </div>
+  );
 };
 
-export default Register;
+export default Landing;

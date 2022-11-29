@@ -109,6 +109,12 @@ form a {
 .btn-view {
   background-color: #BABABA;
 }
+<<<<<<< HEAD
+=======
+.btn-view {
+  background-color: #BABABA;
+}
+>>>>>>> 220db05cb0ff9557606d8a53c2d8b50dcd3ce57f
 
 .col-md.btn-view {
   padding-bottom: 12px;
@@ -354,6 +360,7 @@ footer {
 
 /* End Not Found */
 
+<<<<<<< HEAD
 /* Login */
 #login {
   width: 100%;
@@ -431,3 +438,43 @@ footer {
 
 }
 /* End of Login */
+=======
+/* Form Register */
+.logo-flit {
+  margin-top: -8px;
+  margin-left: 144px;
+}
+
+.card {
+  border-width: 2px;
+  border-color: white;
+  margin: 0% 30% 0% 30%;
+  padding: 3% 0% 3% 0%;
+  border-radius: 5%;
+}
+
+.form-label {
+  padding: 20px 0px 10px 0px;
+  margin: 20px -200px 10px 0px;
+  border-radius: 10%;
+  width: 500px;
+  height: 23px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  color: #2663ff;
+}
+
+.btn-md {
+  background: #2663ff;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  width: 194.35px;
+  height: 42px;
+  margin-left: 150px;
+  margin-top: 75px;
+}
+/* End Form */
+>>>>>>> 220db05cb0ff9557606d8a53c2d8b50dcd3ce57f
