@@ -5,25 +5,31 @@ import "../css/index.css";
 function FormRegister() {
   return (
     <div>
-      <div className="card">
-        <div className="card-body">
-          <img
-            className="logo-flit"
-            src="../assets/register/TaglineLogin.svg"
-            alt="Logo"
-          />
-          <form>
+      <div className="container">
+        <div className="row row-cols-md-12 row-cols-1 d-flex justify-content-center align-items-center hero mb-5">
+        
+          <form class="form justify-content-center align-items-center mb-5">
+          <div
+            className="tagline"
+            style={{
+              "margin-top": "75px",
+              "margin-bottom": "54px",
+              "margin-left": "144px",
+            }}
+          >
+            <img src="./assets/login/Tagline Login.svg" alt="" className="hero-headline" />
+          </div>
             <div className="row align-items-start">
               <div className="col">
                 <label for="exampleInputEmail1" className="form-label">
                   First Name
                 </label>
                 <input
-                  type="email"
+                  type="firstname"
                   placeholder="First Name"
-                  id="Username"
+                  id="firstname"
                   className="form-control"
-                  aria-describedby="emailHelp"
+                  aria-describedby="nameHelp"
                   required
                 />
               </div>
@@ -32,11 +38,11 @@ function FormRegister() {
                   Last Name
                 </label>
                 <input
-                  type="email"
+                  type="lastname"
                   placeholder="Last Name"
-                  id="Username"
+                  id="lastnmae"
                   className="form-control"
-                  aria-describedby="emailHelp"
+                  aria-describedby="nameHelp"
                   required
                 />
               </div>
@@ -79,7 +85,7 @@ function FormRegister() {
                   Mobile Number
                 </label>
                 <input
-                  type="email"
+                  type="nohp"
                   placeholder="08xxxxxxxxx"
                   id="Username"
                   className="form-control"
@@ -133,7 +139,7 @@ function FormRegister() {
                 />
               </div>
             </div>
-            <button className="btn btn-primary btn-md" type="submit">
+            <button className="btn btn-primary btn-md mb-6" type="submit">
               <p>Sign Up Now</p>
             </button>
           </form>

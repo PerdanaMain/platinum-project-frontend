@@ -20,36 +20,20 @@ const Navbar = () => {
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link" href="#home">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#our-service" id="">
-                Our Services
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#why-us">
-                Why Us
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#testimonial">
-                Testimonial
-              </a>
-            </li>
-          </ul>
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav mx-auto my-3 my-lg-0">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link" href="#">Our Services</a>
+                <a class="nav-link" href="#">Why Us</a>
+                <a class="nav-link" href="#">Testimonial</a>
+          </div>   
           <form class="d-flex">
             <a href="/login">Sign In</a>
           </form>

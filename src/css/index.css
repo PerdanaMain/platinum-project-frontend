@@ -9,12 +9,45 @@ nav {
   background-color: #2663ff;
   color: white;
   width: 100%;
+  padding: 20px 0;
 }
 
 div .logo.d-flex {
   padding-left: 88px;
 }
 
+.navbar .navbar-nav .nav-link {
+  color: white;;
+  font-size: 16px;
+  font-weight: 400;
+}
+.navbar .navbar-nav .nav-link.active {
+  color: #FFFFFF;
+  border-bottom: 2px solid #01FB34;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+.navbar .navbar-nav .dropdown-menu {
+  padding: 12px;
+  border-radius: 18px;
+}
+.navbar .navbar-nav .dropdown-menu .dropdown-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 48px;
+  padding-left: 10px;
+}
+.navbar .navbar-nav .list-group .list-group-item {
+  background-color: transparent !important;
+  color: #A3A5AA;
+}
+
+@media (min-width: 1000px) {
+  .navbar .navbar-nav .nav-link {
+    margin: 0 30px;
+  }
+}
 /* div#navbarSupportedContent.collapse.navbar-collapse {
   padding-left: 187px;
 } */
@@ -68,6 +101,31 @@ form a {
 
 }
 
+
+@media (min-width: 576px) {
+  .jumbotron.background-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .jumbotron.background-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .jumbotron.background-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer .info-footer {
+    padding: 0 6rem 3rem;
+  }
+}
 /* enf of Jumbotron */
 
 
@@ -249,12 +307,53 @@ form a {
 
 
 /* End Of Testimonial */
+/* Login */
+.login.header {
+  height: auto;
+}
+
+.header .hero {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.tagline{
+  width: auto;
+
+}
+.form{
+  width: 100%;
+  max-width: 500px;
+}
+.flit-tagline{
+  width: 100%;
+  height: auto;
+}
+.form input:focus {
+  box-shadow: none;
+  border-color: 2663FF;
+}
+.form-login {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px 24px 30px;
+  row-gap: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+.form-login input {
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 2px solid #BABABA;
+}
+.form-login input:focus {
+  box-shadow: none;
+  border-color: 2663FF;
+}
+/* end login  */
+
 
 /* Footer */
-footer {
-  margin-top: 100px;
-  height: 291px;
-}
 
 #footer {
   border-top: 1px #575964 solid;
@@ -283,11 +382,10 @@ footer {
 
 .header-ftr {
   width: px;
-  height: 24px;
+  height: 30px;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-
   color: #152c5b;
 }
 
@@ -306,10 +404,46 @@ footer {
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
-
   color: #575964;
 }
 
+@media (min-width: 576px) {
+  .footer .footer-child {
+    padding: 5rem 2rem 3rem 2rem;
+  }
+
+  .footer .header-ftr {
+    margin-top: 2rem;
+  }
+  .hero-headline{
+    width: auto;
+  }
+
+  .footer .info-footer {
+    padding: 0 2rem 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer .footer-child {
+    padding: 5rem 4rem 6rem 4rem;
+  }
+  
+
+  .footer .info-footer {
+    padding: 0 4rem 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer .footer-child {
+    padding: 5rem 6rem 6rem 6rem;
+  }
+
+  .footer .info-footer {
+    padding: 0 6rem 3rem;
+  }
+}
 /* End Of Footer */
 
 /* Not Found */
@@ -471,3 +605,5 @@ footer {
   margin-top: 75px;
 }
 /* End Form */
+
+

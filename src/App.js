@@ -4,6 +4,7 @@ import Landing from "./page/Landing";
 import Login from "./page/Login";
 import Regist from "./page/Register";
 import NotFound from "./page/generateNotFound";
+import FormLogin from "./page/Login2";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/login2" element={<FormLogin />} />
         <Route path="/regist" element={<Regist />} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate to="/404" />} />
