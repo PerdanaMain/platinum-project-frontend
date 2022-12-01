@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/index.css";
-
 const Jumbotron = () => {
   return (
     <section id="home">
@@ -11,5 +10,4 @@ const Jumbotron = () => {
     </section>
   );
 };
-
 export default Jumbotron;

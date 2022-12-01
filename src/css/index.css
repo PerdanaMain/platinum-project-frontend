@@ -11,7 +11,6 @@ nav {
   width: 100%;
   padding: 20px 0;
 }
-
 div .logo.d-flex {
   padding-left: 88px;
 }
@@ -51,30 +50,25 @@ div .logo.d-flex {
 /* div#navbarSupportedContent.collapse.navbar-collapse {
   padding-left: 187px;
 } */
-
 .collapse ul li a {
   color: white;
   justify-content: space-around;
   text-align: center;
   align-items: center;
   margin-left: 45px;
-
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 }
-
 .collapse ul li a:hover {
   color: #002561;
 }
-
 form a {
   text-decoration: none;
   color: white;
   margin-right: 93px;
-
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
@@ -120,13 +114,11 @@ form a {
     height: auto;
   }
 }
-
 @media (min-width: 992px) {
   .jumbotron.background-image {
     width: 100%;
     height: auto;
   }
-
   .footer .info-footer {
     padding: 0 6rem 3rem;
   }
@@ -141,25 +133,21 @@ form a {
 .panel-view {
   background-color: #fff;
 }
-
 .search-panel {
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
 .plane-panel {
   background-color: #002561;
   padding-top: 15px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
-
 .plane-panel img {
   width: 30px;
   margin-top: 100px;
   margin-left: 20px;
 }
-
 .plane-panel p {
   font-size: 10px;
   margin-left: 3px;
@@ -173,13 +161,26 @@ form a {
 .col-md.btn-view {
   padding-bottom: 12px;
 }
-
 .point-panel-view-top-right {
   border-top-right-radius: 20px;
 }
-
 .point-panel-view-bottom-right {
   border-bottom-right-radius: 20px;
+}
+/* End of Search Panel */
+
+/* Promotion Banner */
+#promotion {
+  background: #E4E1E1;
+}
+
+.desc-pr {
+  padding: 100px 0px 0px 50px;
+
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  color: #0a1531;
 }
 
 /* Responsive Search Panel */
@@ -218,22 +219,8 @@ form a {
 
 /* ===== End of Search Panel ===== */
 
-/* ===== Promotion Banner ===== */
-#promotion {
-  background: #e4e1e1;
-}
-
-.desc-pr {
-  padding: 100px 0px 0px 50px;
-
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 48px;
-  color: #0a1531;
-}
-
 .desc-pr p span {
-  color: #2663ff;
+  color: #2663FF;
 }
 
 .flit-tagline {
@@ -242,7 +229,7 @@ form a {
   font-weight: 500;
   font-size: 32px;
   line-height: 48px;
-  color: #0a1531;
+  color: #0A1531;
   opacity: 0.5;
 }
 
@@ -277,11 +264,12 @@ form a {
   line-height: 36px;
 }
 
-/* ===== End of Our Service ===== */
+/* End of Our Service */
 
-/* ===== Cards ===== */
+
+/* Cards */
 .choose {
-  background-color: #f9fcfc;
+  background-color: #F9FCFC;
 }
 
 .choose h1 {
@@ -290,7 +278,7 @@ form a {
 }
 
 .choose p {
-  color: #879fb0;
+  color: #879FB0;
 }
 
 .choose img {
@@ -298,18 +286,18 @@ form a {
 }
 
 .cl-blue {
-  color: #0f52ba !important;
+  color: #0F52BA !important;
 }
 
-/* ===== End of Cards ===== */
+/* End of Cards */
 
-/* ===== Testimonial ===== */
+/* Testimonial */
 .testimonial-tagline .p-biru {
   height: 25px;
   font-weight: 600;
   font-size: 18px;
   line-height: 140%;
-  color: #3258e8;
+  color: #3258E8;
 }
 
 @media screen and (max-width: 576px) {
@@ -350,9 +338,9 @@ form a {
   color: #848484;
 }
 
-/* ===== End Of Testimonial ===== */
 
-/* ===== Login ===== */
+/* End Of Testimonial */
+/* Login */
 .login.header {
   height: auto;
 }
@@ -362,14 +350,15 @@ form a {
   text-align: center;
 }
 
-.tagline {
+.tagline{
   width: auto;
+
 }
-.form {
+.form{
   width: 100%;
   max-width: 500px;
 }
-.flit-tagline {
+.flit-tagline{
   width: 100%;
   height: auto;
 }
@@ -378,7 +367,7 @@ form a {
   border-color: 2663FF;
 }
 .form-login {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 24px;
   padding: 24px 24px 30px;
   row-gap: 20px;
@@ -388,15 +377,16 @@ form a {
 .form-login input {
   padding: 13px 16px;
   border-radius: 14px;
-  border: 2px solid #bababa;
+  border: 2px solid #BABABA;
 }
 .form-login input:focus {
   box-shadow: none;
   border-color: 2663FF;
 }
-/* ===== end login ===== */
+/* end login  */
 
-/* ===== Footer ===== */
+
+/* Footer */
 
 #footer {
   border-top: 1px #575964 solid;
@@ -421,6 +411,7 @@ form a {
   color: #575964;
   width: 90%;
 }
+
 
 .header-ftr {
   width: px;
@@ -449,7 +440,6 @@ form a {
   color: #575964;
 }
 
-/* Responsive Footer */
 @media (min-width: 576px) {
   .footer .footer-child {
     padding: 5rem 2rem 3rem 2rem;
@@ -458,7 +448,7 @@ form a {
   .footer .header-ftr {
     margin-top: 2rem;
   }
-  .hero-headline {
+  .hero-headline{
     width: auto;
   }
 
@@ -471,6 +461,7 @@ form a {
   .footer .footer-child {
     padding: 5rem 4rem 6rem 4rem;
   }
+  
 
   .footer .info-footer {
     padding: 0 4rem 3rem;
@@ -486,9 +477,8 @@ form a {
     padding: 0 6rem 3rem;
   }
 }
-/* ===== End Of Footer ===== */
+/* End Of Footer */
 
-<<<<<<< HEAD
 
 /* Testi 2 start */
 .content-3-1 .btn:focus,
@@ -563,9 +553,6 @@ form a {
 
 /* testi 2 end */
 /* Not Found */
-=======
-/* ===== Not Found ===== */
->>>>>>> b5b4938e935c2f1ee13863417cb463a57f24c597
 #not-found {
   box-sizing: border-box;
 }
@@ -583,12 +570,12 @@ form a {
 
 .empty-4-5 .title-text {
   font: 600 1.875rem/2.25rem Poppins, sans-serif;
-  color: #272e35;
+  color: #272E35;
   margin-bottom: 1.25rem;
 }
 
 .empty-4-5 .title-caption {
-  color: #9c9c9c;
+  color: #9C9C9C;
   margin-bottom: 4rem;
   letter-spacing: 0.025em;
   line-height: 1.75rem;
@@ -596,7 +583,7 @@ form a {
 
 .empty-4-5 .btn-back {
   font: 600 1.125rem/1.75rem Poppins, sans-serif;
-  background-color: #ff7c57;
+  background-color: #FF7C57;
   padding: 1rem 1.5rem;
   border-radius: 0.75rem;
 }
@@ -606,13 +593,13 @@ form a {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-/* ===== End Not Found ===== */
+/* End Not Found */
 
-/* ===== Login ===== */
+/* Login */
 #login {
   width: 100%;
   height: 700px;
-  background: #ffffff;
+  background: #FFFFFF;
 }
 
 .container-login {
@@ -622,7 +609,7 @@ form a {
   height: 659px;
   left: 393px;
   top: 100px;
-  background: #ffffff;
+  background: #FFFFFF;
   /* border: 1px;
   box-shadow: 2px 2px 2px 2px rgb(0.1, 0.1, 0.1, 0.1);
   border-radius: 24px; */
@@ -634,26 +621,28 @@ form a {
   font-weight: 500;
   font-size: 15px;
   line-height: 22px;
-  color: #2663ff;
+  color: #2663FF;
 }
 
 .input-group-text {
   cursor: pointer;
-}
+} 
+
 
 ::placeholder {
   width: 148px;
   height: 18px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: #bababa;
+  color: #BABABA;
+
 }
 
 .ini-span p {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -664,25 +653,27 @@ form a {
   margin-left: 59px;
   width: 48px;
   height: 18px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
   line-height: 18px;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .oauth-form {
   margin-left: 140px;
 }
 
+
 .oauth button {
   display: flex;
   flex-direction: row;
-}
-/* ===== End of Login ===== */
 
-/* ===== Form Register ===== */
+}
+/* End of Login */
+
+/* Form Register */
 .logo-flit {
   margin-top: -8px;
   margin-left: 144px;
@@ -719,4 +710,6 @@ form a {
   margin-left: 150px;
   margin-top: 75px;
 }
-/* ===== End Form ===== */
+/* End Form */
+
+
