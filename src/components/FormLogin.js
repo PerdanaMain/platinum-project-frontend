@@ -7,14 +7,15 @@ function FormLogin() {
           <div className="row row-cols-md-12 row-cols-1 d-flex justify-content-center align-items-center hero mb-5">
           
             <form class="form justify-content-center align-items-center mb-5">
-                <div className="row align-items-center">
-                    <div className="col">
+                
+                  <div className="d-flex flex-column align-items-center">
+                    <div className="row align-items-center">
                     <div
                             className="tagline"
                             style={{
                             "margin-top": "75px",
                             "margin-bottom": "54px",
-                            "margin-left": "144px",
+                            "alignItems": "center"
                             }}
                         >
                             <img src="./assets/login/Tagline Login.svg" alt="" class="hero-headline" />
@@ -22,6 +23,8 @@ function FormLogin() {
                     </div>
                     
                 </div>
+
+                
                 <div className="row align-items-start">
 
                     <div className="col">
@@ -54,10 +57,26 @@ function FormLogin() {
                   />
                 </div>
 
-              </div>
-              <button className="btn btn-primary btn-md mb-6" type="submit">
+                <div className="d-flex flex-column align-items-center">
+                    <div className="row align-items-center">
+                    <div
+                            className="tagline"
+                            style={{
+                            "margin-top": "75px",
+                            "margin-bottom": "54px",
+                            "alignItems": "center"
+                            }}
+                        >
+                            <button className="hero-hideline btn btn-primary btn-md mb-6" type="submit ">
                 <p>Lets Go</p>
               </button>
+                    </div>
+                    </div>
+                    
+                </div>
+
+              </div>
+              
             </form>
           </div>
         </div>
