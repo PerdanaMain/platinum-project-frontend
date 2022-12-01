@@ -94,7 +94,7 @@ form a {
   padding-bottom: 5%;
 }
 
-@media (min-width: 400px) {
+@media (max-width: 400px) {
   .jumbotron.background-image {
     width: 100%;
     height: auto;
@@ -167,23 +167,9 @@ form a {
 .point-panel-view-bottom-right {
   border-bottom-right-radius: 20px;
 }
-/* End of Search Panel */
-
-/* Promotion Banner */
-#promotion {
-  background: #E4E1E1;
-}
-
-.desc-pr {
-  padding: 100px 0px 0px 50px;
-
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 48px;
-  color: #0a1531;
-}
 
 /* Responsive Search Panel */
+
 @media (max-width: 400px) {
   .search-panel {
     width: 100%;
@@ -216,11 +202,24 @@ form a {
     border-bottom-right-radius: 0px;
   }
 }
+/* End of Search Panel */
 
-/* ===== End of Search Panel ===== */
+/* Promotion Banner */
+#promotion {
+  background: #e4e1e1;
+}
+
+.desc-pr {
+  padding: 100px 0px 0px 50px;
+
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  color: #0a1531;
+}
 
 .desc-pr p span {
-  color: #2663FF;
+  color: #2663ff;
 }
 
 .flit-tagline {
@@ -229,8 +228,41 @@ form a {
   font-weight: 500;
   font-size: 32px;
   line-height: 48px;
-  color: #0A1531;
+  color: #0a1531;
   opacity: 0.5;
+}
+
+@media (max-width: 400px) {
+  .desc-pr {
+    padding: 10px 0px 0px 0px;
+
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+    color: #0a1531;
+  }
+
+  .desc-pr p {
+    padding-left: 8%;
+    font-size: 20px;
+    position: center;
+  }
+
+  .desc-pr span {
+    color: #2663ff;
+  }
+
+  .btn-tagline {
+    padding-left: 8%;
+  }
+
+  .best-deal h1 {
+    font-size: 20px;
+  }
+
+  .best-deal p {
+    font-size: 13px;
+  }
 }
 
 /*
@@ -266,10 +298,9 @@ form a {
 
 /* End of Our Service */
 
-
 /* Cards */
 .choose {
-  background-color: #F9FCFC;
+  background-color: #f9fcfc;
 }
 
 .choose h1 {
@@ -278,7 +309,7 @@ form a {
 }
 
 .choose p {
-  color: #879FB0;
+  color: #879fb0;
 }
 
 .choose img {
@@ -286,7 +317,7 @@ form a {
 }
 
 .cl-blue {
-  color: #0F52BA !important;
+  color: #0f52ba !important;
 }
 
 /* End of Cards */
@@ -297,7 +328,7 @@ form a {
   font-weight: 600;
   font-size: 18px;
   line-height: 140%;
-  color: #3258E8;
+  color: #3258e8;
 }
 
 @media screen and (max-width: 576px) {
@@ -338,7 +369,6 @@ form a {
   color: #848484;
 }
 
-
 /* End Of Testimonial */
 /* Login */
 .login.header {
@@ -350,15 +380,14 @@ form a {
   text-align: center;
 }
 
-.tagline{
+.tagline {
   width: auto;
-
 }
-.form{
+.form {
   width: 100%;
   max-width: 500px;
 }
-.flit-tagline{
+.flit-tagline {
   width: 100%;
   height: auto;
 }
@@ -367,7 +396,7 @@ form a {
   border-color: 2663FF;
 }
 .form-login {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 24px;
   padding: 24px 24px 30px;
   row-gap: 20px;
@@ -377,14 +406,13 @@ form a {
 .form-login input {
   padding: 13px 16px;
   border-radius: 14px;
-  border: 2px solid #BABABA;
+  border: 2px solid #bababa;
 }
 .form-login input:focus {
   box-shadow: none;
   border-color: 2663FF;
 }
 /* end login  */
-
 
 /* Footer */
 
@@ -411,7 +439,6 @@ form a {
   color: #575964;
   width: 90%;
 }
-
 
 .header-ftr {
   width: px;
@@ -448,7 +475,7 @@ form a {
   .footer .header-ftr {
     margin-top: 2rem;
   }
-  .hero-headline{
+  .hero-headline {
     width: auto;
   }
 
@@ -461,7 +488,6 @@ form a {
   .footer .footer-child {
     padding: 5rem 4rem 6rem 4rem;
   }
-  
 
   .footer .info-footer {
     padding: 0 4rem 3rem;
@@ -479,77 +505,74 @@ form a {
 }
 /* End Of Footer */
 
-
 /* Testi 2 start */
 .content-3-1 .btn:focus,
-      .content-3-1 .btn:active {
-        outline: none !important;
-      }
+.content-3-1 .btn:active {
+  outline: none !important;
+}
 
-      .content-3-1 {
-        padding: 2rem 2rem;
-      }
+.content-3-1 {
+  padding: 2rem 2rem;
+}
 
-      .content-3-1 .img-hero {
-        width: 100%;
-        margin-bottom: 3rem;
-      }
+.content-3-1 .img-hero {
+  width: 100%;
+  margin-bottom: 3rem;
+}
 
-      .content-3-1 .right-column {
-        width: 100%;
-      }
+.content-3-1 .right-column {
+  width: 100%;
+}
 
-      .content-3-1 .title-text {
-        font: 600 1.875rem/2.25rem Poppins, sans-serif;
-        margin-bottom: 2.5rem;
-        letter-spacing: -0.025em;
-        color: #121212;
-      }
+.content-3-1 .title-text {
+  font: 600 1.875rem/2.25rem Poppins, sans-serif;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.025em;
+  color: #121212;
+}
 
-      .content-3-1 .title-caption {
-        font: 500 1.5rem/2rem Poppins, sans-serif;
-        margin-bottom: 1.25rem;
-        color: #121212;
-      }
+.content-3-1 .title-caption {
+  font: 500 1.5rem/2rem Poppins, sans-serif;
+  margin-bottom: 1.25rem;
+  color: #121212;
+}
 
-      .content-3-1 .circle {
-        font: 500 1.25rem/1.75rem Poppins, sans-serif;
-        height: 3rem;
-        width: 3rem;
-        margin-bottom: 1.25rem;
-        border-radius: 9999px;
-        background-color: #ffbf56;
-      }
+.content-3-1 .circle {
+  font: 500 1.25rem/1.75rem Poppins, sans-serif;
+  height: 3rem;
+  width: 3rem;
+  margin-bottom: 1.25rem;
+  border-radius: 9999px;
+  background-color: #ffbf56;
+}
 
-      .content-3-1 .text-caption {
-        font: 400 1rem/1.75rem Poppins, sans-serif;
-        letter-spacing: 0.025em;
-        color: #565656;
-      }
+.content-3-1 .text-caption {
+  font: 400 1rem/1.75rem Poppins, sans-serif;
+  letter-spacing: 0.025em;
+  color: #565656;
+}
 
+@media (min-width: 768px) {
+  .content-3-1 .title-text {
+    font: 600 2.25rem/2.5rem Poppins, sans-serif;
+  }
+}
 
-      @media (min-width: 768px) {
-        .content-3-1 .title-text {
-          font: 600 2.25rem/2.5rem Poppins, sans-serif;
-        }
-      }
+@media (min-width: 992px) {
+  .content-3-1 .img-hero {
+    width: 50%;
+    margin-bottom: 0;
+  }
 
-      @media (min-width: 992px) {
-        .content-3-1 .img-hero {
-          width: 50%;
-          margin-bottom: 0;
-        }
+  .content-3-1 .right-column {
+    width: 50%;
+  }
 
-        .content-3-1 .right-column {
-          width: 50%;
-        }
-
-        .content-3-1 .circle {
-          margin-right: 1.25rem;
-          margin-bottom: 0;
-        }
-      }
-
+  .content-3-1 .circle {
+    margin-right: 1.25rem;
+    margin-bottom: 0;
+  }
+}
 
 /* testi 2 end */
 /* Not Found */
@@ -570,12 +593,12 @@ form a {
 
 .empty-4-5 .title-text {
   font: 600 1.875rem/2.25rem Poppins, sans-serif;
-  color: #272E35;
+  color: #272e35;
   margin-bottom: 1.25rem;
 }
 
 .empty-4-5 .title-caption {
-  color: #9C9C9C;
+  color: #9c9c9c;
   margin-bottom: 4rem;
   letter-spacing: 0.025em;
   line-height: 1.75rem;
@@ -583,7 +606,7 @@ form a {
 
 .empty-4-5 .btn-back {
   font: 600 1.125rem/1.75rem Poppins, sans-serif;
-  background-color: #FF7C57;
+  background-color: #ff7c57;
   padding: 1rem 1.5rem;
   border-radius: 0.75rem;
 }
@@ -599,7 +622,7 @@ form a {
 #login {
   width: 100%;
   height: 700px;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .container-login {
@@ -609,7 +632,7 @@ form a {
   height: 659px;
   left: 393px;
   top: 100px;
-  background: #FFFFFF;
+  background: #ffffff;
   /* border: 1px;
   box-shadow: 2px 2px 2px 2px rgb(0.1, 0.1, 0.1, 0.1);
   border-radius: 24px; */
@@ -621,28 +644,26 @@ form a {
   font-weight: 500;
   font-size: 15px;
   line-height: 22px;
-  color: #2663FF;
+  color: #2663ff;
 }
 
 .input-group-text {
   cursor: pointer;
-} 
-
+}
 
 ::placeholder {
   width: 148px;
   height: 18px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: #BABABA;
-
+  color: #bababa;
 }
 
 .ini-span p {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -653,23 +674,21 @@ form a {
   margin-left: 59px;
   width: 48px;
   height: 18px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
   line-height: 18px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .oauth-form {
   margin-left: 140px;
 }
 
-
 .oauth button {
   display: flex;
   flex-direction: row;
-
 }
 /* End of Login */
 
@@ -711,5 +730,3 @@ form a {
   margin-top: 75px;
 }
 /* End Form */
-
-

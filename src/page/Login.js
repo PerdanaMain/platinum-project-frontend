@@ -9,9 +9,9 @@ const Login = () => {
     <div>
       <Navbar />
       <section id="login">
-        <div class="container-login">
+        <div className="container-login">
           <div
-            class="tagline"
+            className="tagline"
             style={{
               "margin-top": "-8px",
               "margin-bottom": "54px",
@@ -20,64 +20,44 @@ const Login = () => {
           >
             <img src="./assets/login/Tagline Login.svg" alt="" />
           </div>
-          <div class="form-part">
+          <div className="form-part">
             <form action="">
-              <div class="mb-1">
-                <label for="exampleInputEmail1" class="form-label ini-label">
+              <div className="mb-1">
+                <label for="exampleInputEmail1" className="form-label ini-label">
                   Email
                 </label>
-                <input
-                  type="email"
-                  placeholder="example100@gmail.com"
-                  id="exampleInputEmail1"
-                  class="form-control"
-                  aria-describedby="emailHelp"
-                  required
-                />
+                <input type="email" placeholder="example100@gmail.com" id="exampleInputEmail1" className="form-control" aria-describedby="emailHelp" required />
               </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label ini-label">
+              <div className="mb-3">
+                <label for="exampleInputPassword1" className="form-label ini-label">
                   Password
                 </label>
                 <div className="input-group">
-                  <div class="input-group mb-3 ">
-                    <input
-                      type="password"
-                      id="exampleInputPassword1"
-                      class="form-control"
-                      name="password"
-                      placeholder="password"
-                      aria-label="Password"
-                      aria-describedby="basic-addon2"
-                      required
-                    />
+                  <div className="input-group mb-3 ">
+                    <input type="password" id="exampleInputPassword1" className="form-control" name="password" placeholder="password" aria-label="Password" aria-describedby="basic-addon2" required />
                     <span
                       onClick={(e) => {
                         setShow((value) => !value);
                       }}
-                      class="input-group-text"
+                      className="input-group-text"
                       id="show-hide"
                     >
-                      {!isShow ? (
-                        <i class="fas fa-eye"></i>
-                      ) : (
-                        <i class="fas fa-eye-slash"></i>
-                      )}
+                      {!isShow ? <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
                     </span>
                   </div>
                 </div>
               </div>
-              <div class="mt-4 mb-5">
+              <div className="mt-4 mb-5">
                 <a href="/regist">
-                  <span class="mt-4 pt-4 d-flex ini-span text-center">
+                  <span className="mt-4 pt-4 d-flex ini-span text-center">
                     <p style={{ color: "#2663FF" }}>Don't</p>&nbsp;
                     <p style={{ color: "#BABABA" }}>Have Account?</p>
                   </span>
                 </a>
               </div>
-              <div class="d-grid gap-2 mt-5">
+              <div className="d-grid gap-2 mt-5">
                 <button
-                  class="btn btn-primary ini-button"
+                  className="btn btn-primary ini-button"
                   type="submit"
                   style={{
                     background: "#2663FF",
@@ -93,13 +73,13 @@ const Login = () => {
                 </button>
               </div>
             </form>
-            <div class="text-center mt-2 ">
-              <div class="google-log">
+            <div className="text-center mt-2 ">
+              <div className="google-log">
                 <a href="/">
                   <img src="./assets/login/Google Auth.svg" alt="" />
                 </a>
               </div>
-              <div class="apple-log" style={{ "margin-top": "-23px" }}>
+              <div className="apple-log" style={{ "margin-top": "-23px" }}>
                 <a href="/">
                   <img src="./assets/login/Apple Auth.svg" alt="" />
                 </a>
