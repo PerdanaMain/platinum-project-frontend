@@ -145,7 +145,7 @@ form a {
 }
 .plane-panel img {
   width: 30px;
-  margin-top: 100px;
+  margin-top: 80px;
   margin-left: 20px;
 }
 .plane-panel p {
@@ -720,6 +720,15 @@ form a {
   color: #2663ff;
 }
 
+.btn-md-login {
+  background: #2663ff;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  width: 194.35px;
+  height: 42px;
+  margin-left: 50px;
+
+}
 .btn-md {
   background: #2663ff;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
@@ -730,3 +739,109 @@ form a {
   margin-top: 75px;
 }
 /* End Form */
+
+
+/* Sidebar */
+/* Sidebar */
+.container-dash {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar{
+  background-color:  #121212;
+  width: 260px;
+  padding: 24px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  transition: all ease-in 0.3s;
+}
+.sidebar.hide{
+  width: 87px;
+  transition: all ease-out 0.3s;
+}
+.main-content{
+  background-color: #eeeeee;
+  flex-grow: 1;
+}
+.sidebar .description-header{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.sidebar.hide .description-header{
+  display: none;
+}
+.sidebar a{
+  text-decoration: none;
+}
+
+.sidebar .header .list-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 10px;
+  border-radius: 8px;
+  height: 40px;
+  box-sizing: border-box;
+}
+.sidebar .header .list-item{
+  margin-right: 12px;
+}
+.sidebar .header .illustration{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  margin: 10px 0px 22px 0px;
+  box-sizing: border-box;
+}
+.sidebar.hide .illustration{
+  display: none;
+}
+
+.sidebar .main .list-item .description{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.sidebar.hide .main .list-item .description{
+  display: none;
+}
+
+.sidebar .main .list-item .icon{
+  margin-right: 12px;
+}
+.sidebar .main .list-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 10px;
+  position: static;
+  /* width: 212px; */
+  left: calc(50% - 212px/2);
+  top: calc(50% - 40px/2 - 120px);
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: all ease-in .2s;
+}
+
+.sidebar .main .list-item:hover{
+  background-color: #FF9900;
+  transition: all ease-in .2s;
+}
+.sidebar .main .list-item button{
+  border: none;
+  color: #fff;
+}
+.sidebar .main .list-item button:hover{
+  background-color: #FF9900;
+  transition: all ease-in .2s;
+}
+/* End Sidebar */

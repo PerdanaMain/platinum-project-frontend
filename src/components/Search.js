@@ -27,7 +27,7 @@ const Search = () => {
                           (btnView === false ? "bg-primary" : "")
                         }
                       >
-                        Booking
+                        Pulang - Pergi
                       </button>
                       <button
                         onClick={(e) => setBtnView(true)}
@@ -36,7 +36,7 @@ const Search = () => {
                           (btnView === true ? "bg-primary" : "")
                         }
                       >
-                        Info Penerbangan
+                        Sekali Pergi
                       </button>
                     </div>
                   </div>
