@@ -27,7 +27,7 @@ function FormRegister() {
 
 
             <div className="row align-items-start">
-              <div className="col">
+              <div className="flex-column align-items-start">
                 <label for="exampleInputEmail1" className="form-label">
                   First Name
                 </label>
@@ -40,7 +40,7 @@ function FormRegister() {
                   required
                 />
               </div>
-              <div className="col">
+              <div className="flex-column align-items-start">
                 <label for="exampleInputEmail1" className="form-label">
                   Last Name
                 </label>
@@ -117,7 +117,7 @@ function FormRegister() {
               </div>
             </div>
             <div className="row align-items-start">
-              <div className="col">
+              <div className="flex-column align-items-start">
                 <label for="exampleInputEmail1" className="form-label">
                   Email
                 </label>
@@ -130,7 +130,7 @@ function FormRegister() {
                   required
                 />
               </div>
-              <div className="col">
+              <div className="flex-column align-items-start">
                 <label for="exampleInputEmail1" className="form-label">
                   Password
                 </label>
@@ -146,9 +146,25 @@ function FormRegister() {
                 />
               </div>
             </div>
-            <button className="btn btn-primary btn-md mb-6" type="submit">
-              <p>Sign Up Now</p>
-            </button>
+            <div className="d-flex flex-column align-items-center">
+                <div className="flex-column align-items-center">
+              <button
+                  className="btn btn-primary ini-button"
+                  type="submit"
+                  style={{
+                    background: "#2663FF",
+                    "box-shadow": "0px 8px 24px rgba(0, 0, 0, 0.15)",
+                    "border-radius": "30px",
+                    width: "194.35px",
+                    height: "42px",
+                    "margin-top": " 45px",
+                  }}
+                >
+                  <p>Let's Go</p>
+                </button>
+              </div>
+              </div>
+           
           </form>
         </div>
       </div>
