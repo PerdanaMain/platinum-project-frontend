@@ -29,11 +29,19 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav mx-auto my-3 my-lg-0">
-                <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                <a class="nav-link" href="#">Our Services</a>
-                <a class="nav-link" href="#">Why Us</a>
-                <a class="nav-link" href="#">Testimonial</a>
-          </div>   
+            <a class="nav-link" aria-current="page" href="#search-panel">
+              Home
+            </a>
+            <a class="nav-link" href="#our-service">
+              Our Services
+            </a>
+            <a class="nav-link" href="#why-us">
+              Why Us
+            </a>
+            <a class="nav-link" href="#testimonial">
+              Testimonial
+            </a>
+          </div>
           <form class="d-flex">
             <a href="/login">Sign In</a>
           </form>

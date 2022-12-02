@@ -8,7 +8,7 @@ const Dashboard = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [name, setName] = useState("");
-  const [exp, setExp] = useState("");
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,7 +25,6 @@ const Dashboard = () => {
       setFirstName(decoded.firstname);
       setLastName(decoded.lastname);
       setName(firstName + " " + lastName);
-      setExp(decoded.exp);
     } catch (error) {
       console.log(error);
     }

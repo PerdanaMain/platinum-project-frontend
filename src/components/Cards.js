@@ -1,19 +1,6 @@
 import React from "react";
 import "../css/index.css";
 const Cards = () => {
-  const coloringgoals = (x) => {
-    x.classList.add("bg-white");
-    x.classList.add("rounded-24");
-    x.childNodes[1].style.display = "none";
-    x.childNodes[3].style.display = "block";
-  };
-  const normalgoals = (x) => {
-    x.classList.remove("bg-white");
-    x.classList.remove("rounded-24");
-    x.childNodes[1].style.display = "block";
-    x.childNodes[3].style.display = "none";
-  };
-
   return (
     <section id="why-us">
       <div className="container pb-4 px-4">
@@ -22,11 +9,7 @@ const Cards = () => {
           <p>House is commited to helping its clients to reach their goals.</p>
         </div>
         <div className="row py-5 choose">
-          <div
-            class="col-md-3 p-4"
-            onmouseover="coloringgoals(this)"
-            onmouseout="normalgoals(this)"
-          >
+          <div class="col-md-3 p-4">
             <img
               src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/taxes.svg"
               alt="taxes"

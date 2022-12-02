@@ -25,7 +25,7 @@ const Sidebar = () => {
     <div class="sidebar">
       <div class="header">
         <div class="list-item">
-          <a href="">
+          <a href>
             <img
               src="./assets/landing/flit-logo.png"
               width={50}
@@ -42,7 +42,7 @@ const Sidebar = () => {
       </div>
       <div class="main">
         <div class="list-item">
-          <a href="#">
+          <a href>
             <img
               src="./assets/dashboard/icon-dashboard.svg"
               alt=""
@@ -52,7 +52,7 @@ const Sidebar = () => {
           </a>
         </div>
         <div class="list-item">
-          <a href="#">
+          <a href>
             <img
               src="./assets/dashboard/icon-analytics.png"
               alt=""
@@ -62,7 +62,7 @@ const Sidebar = () => {
           </a>
         </div>
         <div class="list-item">
-          <a href="#">
+          <a href>
             <img
               src="./assets/dashboard/icon-category.svg"
               alt=""
@@ -72,13 +72,13 @@ const Sidebar = () => {
           </a>
         </div>
         <div class="list-item">
-          <a href="#">
+          <a href>
             <img src="./assets/dashboard/icon-team.svg" alt="" class="icon" />
             <span class="description">Booking</span>
           </a>
         </div>
         <div class="list-item">
-          <a href="#">
+          <a href>
             <img src="./assets/dashboard/icon-event.svg" alt="" class="icon" />
             <span class="description">Airport</span>
           </a>

@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="address footer-child col-auto" style={{ width: 350 }}>
           <img src="./assets/landing/flit-2 1.svg" alt="" width={35} />
           <img src="./assets/landing/flit-3 1.svg" alt="" width={35} />
-          
+
           <p className="brand-tagline">
             We kaboom your beauty holiday instantly and memorable.
           </p>
@@ -15,16 +15,12 @@ const Footer = () => {
         <div className="col-auto mr-5">
           <p class="header-ftr">For Beginner</p>
           <div class="footer-child">
-          <p>
-              <a href="#promotion">New Account</a>
+            <p>
+              <a href="/regist">New Account</a>
             </p>
             <p>
-              <a href="#our-service">Start Booking</a>
+              <a href="/login">Start Booking</a>
             </p>
-            <p>
-              <a href="#testimonial">Use Payment</a>
-            </p>
-            
           </div>
         </div>
         <div className="col-auto mr-5 navigation">
@@ -53,7 +49,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="info-footercopyrigth text-center pb-3" style={{ color: " #575964" }}>
+      <p
+        className="info-footercopyrigth text-center pb-3"
+        style={{ color: " #575964" }}
+      >
         Copyright 2022 • All rights reserved • Flit
       </p>
     </footer>
