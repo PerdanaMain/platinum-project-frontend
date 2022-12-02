@@ -1,31 +1,85 @@
 import React from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import "../css/index.css";
 
 function FormRegister() {
+  const [formData, setFormData] = React.useState({
+    firstName: "",
+    lastName: "",
+    gender: "",
+    phone: "",
+    birthdate: "",
+    email: "",
+    password: "",
+    confPassword: "",
+  });
+  const [msg, setMsg] = React.useState("");
+  const navigate = useNavigate("/login");
+  const changeHandler = (event) => {
+    const { name, value, type, checked } = event.target; //event target destructuring
+
+    setFormData((prevFormData) => {
+      //set State Value
+      return {
+        ...prevFormData, //take prev state to new object
+        [name]: type === "checkbox" ? checked : value, // if type is checkbox the value will be checked (bolean value) else the value willl be value of input
+      };
+    });
+  };
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+    try {
+      await axios.post(
+        "https://platinum-project-backend-production.up.railway.app/v1/api/register",
+        {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          gender: formData.gender,
+          phone: formData.phone,
+          birthdate: formData.birthdate,
+          email: formData.email,
+          password: formData.password,
+          confPassword: formData.confPassword,
+        }
+      );
+      navigate("/login");
+    } catch (error) {
+      if (error.response) {
+        setMsg(error.response.data.msg);
+      }
+    }
+  };
   return (
     <div>
       <div className="container">
         <div className="row row-cols-md-12 row-cols-1 d-flex justify-content-center align-items-center hero mb-5">
-        
-          <form class="form justify-content-center align-items-center mb-5">
-          <div className="d-flex flex-column align-items-center">
-                    <div className="row align-items-center">
-                    <div
-                            className="tagline"
-                            style={{
-                            "margin-top": "75px",
-                            "margin-bottom": "54px",
-                            "alignItems": "center"
-                            }}
-                        >
-                            <img src="./assets/login/Tagline Login.svg" alt="" class="hero-headline" />
-                    </div>
-                    </div>
-                    
+          <form
+            onSubmit={submitHandler}
+            class="form justify-content-center align-items-center mb-5"
+          >
+            {" "}
+            <div className="d-flex flex-column align-items-center">
+              <div className="row align-items-center">
+                <div
+                  className="tagline"
+                  style={{
+                    "margin-top": "75px",
+                    "margin-bottom": "54px",
+                    alignItems: "center",
+                  }}
+                >
+                  <img
+                    src="./assets/login/Tagline Login.svg"
+                    alt=""
+                    class="hero-headline"
+                  />
                 </div>
-
-
+              </div>
+            </div>
+            <p>{msg}</p>
             <div className="row align-items-start">
               <div className="flex-column align-items-start">
                 <label for="exampleInputEmail1" className="form-label">
@@ -38,6 +92,9 @@ function FormRegister() {
                   className="form-control"
                   aria-describedby="nameHelp"
                   required
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={changeHandler}
                 />
               </div>
               <div className="flex-column align-items-start">
@@ -51,6 +108,9 @@ function FormRegister() {
                   className="form-control"
                   aria-describedby="nameHelp"
                   required
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={changeHandler}
                 />
               </div>
             </div>
@@ -63,10 +123,11 @@ function FormRegister() {
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="jeniskelamin"
+                    name="gender"
                     id="flexRadioDefault1"
-                    value={"L"}
-                    checked
+                    value="laki-laki"
+                    checked={formData.gender === "laki-laki"}
+                    onChange={changeHandler}
                   />
                   <label class="form-check-label" for="flexRadioDefault1">
                     Laki - Laki
@@ -75,13 +136,16 @@ function FormRegister() {
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="jeniskelamin"
+                      name="gender"
                       id="inlineRadio1"
-                      value="P"
+                      value="perempuan"
+                      checked={formData.gender === "perempuan"}
+                      onChange={changeHandler}
                     />
                     <label class="form-check-label" for="inlineRadio1">
                       Perempuan
                     </label>
+                    <span>{formData.gender}</span>
                   </div>
                 </div>
               </div>
@@ -98,6 +162,9 @@ function FormRegister() {
                   className="form-control"
                   aria-describedby="emailHelp"
                   required
+                  name="phone"
+                  value={formData.phone}
+                  onChange={changeHandler}
                 />
               </div>
               <div className="col-lg-6">
@@ -107,12 +174,14 @@ function FormRegister() {
                 <input
                   type="date"
                   className="form-control"
-                  name="password"
                   placeholder="mm/dd/yyyy"
                   aria-label="Password"
                   id="password"
                   aria-describedby="basic-addon2"
                   required
+                  name="birthdate"
+                  value={formData.birthdate}
+                  onChange={changeHandler}
                 />
               </div>
             </div>
@@ -128,6 +197,9 @@ function FormRegister() {
                   className="form-control"
                   aria-describedby="emailHelp"
                   required
+                  name="email"
+                  value={formData.email}
+                  onChange={changeHandler}
                 />
               </div>
               <div className="flex-column align-items-start">
@@ -143,6 +215,25 @@ function FormRegister() {
                   id="password"
                   aria-describedby="basic-addon2"
                   required
+                  value={formData.password}
+                  onChange={changeHandler}
+                />
+              </div>
+              <div className="col">
+                <label for="exampleInputEmail1" className="form-label">
+                  Confirm Password
+                </label>
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="password"
+                  aria-label="Password"
+                  id="password"
+                  aria-describedby="basic-addon2"
+                  required
+                  name="confPassword"
+                  value={formData.confPassword}
+                  onChange={changeHandler}
                 />
               </div>
             </div>
