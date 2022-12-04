@@ -1,4 +1,8 @@
 import React from "react";
+<<<<<<< HEAD
+=======
+import "../css/index.css";
+>>>>>>> a830d3f9a97b68ed9c903bf0989d823a0000e731
 
 const Navbar = () => {
   return (
@@ -27,6 +31,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+<<<<<<< HEAD
           <div className="navbar-nav mx-auto my-3 my-lg-0">
             <a className="nav-link" aria-current="page" href="#search-panel">
               Home
@@ -42,6 +47,23 @@ const Navbar = () => {
             </a>
           </div>
           <form className="d-flex">
+=======
+          <div class="navbar-nav mx-auto my-3 my-lg-0">
+            <a class="nav-link" aria-current="page" href="#search-panel">
+              Home
+            </a>
+            <a class="nav-link" href="#our-service">
+              Our Services
+            </a>
+            <a class="nav-link" href="#why-us">
+              Why Us
+            </a>
+            <a class="nav-link" href="#testimonial">
+              Testimonial
+            </a>
+          </div>
+          <form class="d-flex">
+>>>>>>> a830d3f9a97b68ed9c903bf0989d823a0000e731
             <a href="/login">Sign In</a>
           </form>
         </div>

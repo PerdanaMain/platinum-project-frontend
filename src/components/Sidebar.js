@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 const Sidebar = () => {
   const navigate = useNavigate();
   const logoutHandler = async () => {

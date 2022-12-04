@@ -1,5 +1,9 @@
 import React from "react";
+<<<<<<< HEAD
 
+=======
+import "../css/index.css";
+>>>>>>> a830d3f9a97b68ed9c903bf0989d823a0000e731
 const Footer = () => {
   return (
     <footer id="footer">
@@ -13,8 +17,13 @@ const Footer = () => {
           </p>
         </div>
         <div className="col-auto mr-5">
+<<<<<<< HEAD
           <p className="header-ftr">For Beginner</p>
           <div className="footer-child">
+=======
+          <p class="header-ftr">For Beginner</p>
+          <div class="footer-child">
+>>>>>>> a830d3f9a97b68ed9c903bf0989d823a0000e731
             <p>
               <a href="/regist">New Account</a>
             </p>
@@ -24,8 +33,13 @@ const Footer = () => {
           </div>
         </div>
         <div className="col-auto mr-5 navigation">
+<<<<<<< HEAD
           <p className="header-ftr">Explore Us</p>
           <div className="footer-child">
+=======
+          <p class="header-ftr">Explore Us</p>
+          <div class="footer-child">
+>>>>>>> a830d3f9a97b68ed9c903bf0989d823a0000e731
             <p>
               <a href="#home">Home</a>
             </p>
@@ -41,8 +55,13 @@ const Footer = () => {
           </div>
         </div>
         <div className="col-auto mr-5 contact">
+<<<<<<< HEAD
           <p className="header-ftr">Connect Us</p>
           <div className="footer-child">
+=======
+          <p class="header-ftr">Connect Us</p>
+          <div class="footer-child">
+>>>>>>> a830d3f9a97b68ed9c903bf0989d823a0000e731
             <p>supportflit@airlines.com</p>
             <p>+627654654</p>
             <p>Jakarta, ID</p>
