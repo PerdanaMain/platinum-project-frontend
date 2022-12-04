@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "platinum-test",
-=======
-  "name": "platinum-project-frontend",
->>>>>>> a830d3f9a97b68ed9c903bf0989d823a0000e731
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,10 +12,6 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-=======
-    "react-icons": "^4.7.1",
->>>>>>> a830d3f9a97b68ed9c903bf0989d823a0000e731
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^6.4.4",
     "react-scripts": "5.0.1",
