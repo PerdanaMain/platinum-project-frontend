@@ -20,7 +20,7 @@ const Register = () => {
   });
   const [msg, setMsg] = useState(null);
   const [show, setShow] = useState(false);
-  const navigate = useNavigate("/login");
+  const navigate = useNavigate();
   const success = "OK";
 
   const handleClose = () => setShow(false);
@@ -54,8 +54,8 @@ const Register = () => {
       await axios.post(
         "https://platinum-project-backend-production.up.railway.app/v1/api/register",
         {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
+          firstname: formData.firstName,
+          lastname: formData.lastName,
           phone: formData.phone,
           birthdate: formData.birthdate,
           gender: formData.gender,
@@ -65,7 +65,7 @@ const Register = () => {
         }
       );
       setMsg(success);
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);

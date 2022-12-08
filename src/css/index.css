@@ -202,6 +202,11 @@ form a {
     margin-left: 75%;
     color: #fff;
   }
+
+  .col-md.sm-sm{
+    margin-top: 10px;
+  }
+
   .point-panel-view-top-right {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;

@@ -18,7 +18,6 @@ const Login = () => {
 
   const Login = async (e) => {
     e.preventDefault();
-    console.log({ email, password });
     try {
       const post = await axios.post(
         "https://platinum-project-backend-production.up.railway.app/v1/api/login",
