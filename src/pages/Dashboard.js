@@ -1,39 +1,41 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import jwt_decode from "jwt-decode";
+import Navbar from "../components/Navbar";
+import Home from "../components/Home";
+import Panel from "../components/Panel";
+import Promotion from "../components/Promotion";
+import OurService from "../components/Services";
+import WhyUs from "../components/whyUs";
+import Testimonial from "../components/Testimonial";
+import Footer from "../components/Footer";
 
-import Sidebar from "../components/Sidebar";
+import axios from "axios";
 const Dashboard = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [name, setName] = useState("");
-
-  const navigate = useNavigate();
+  const [airport, setAirport] = useState("");
 
   useEffect(() => {
-    decoder();
+    getAirport();
   });
 
-  const decoder = () => {
+  const getAirport = async () => {
     try {
-      const accessToken = sessionStorage.getItem("accessToken");
-      if (!accessToken) {
-        navigate("/404");
-      }
-      const decoded = jwt_decode(accessToken);
-      setFirstName(decoded.firstname);
-      setLastName(decoded.lastname);
-      setName(firstName + " " + lastName);
+      const get = await axios.get(
+        "https://platinum-project-backend-production.up.railway.app/v1/api/airports"
+      );
+      setAirport(get.data.data);
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <div className="container-dash">
-      <Sidebar />
-      <div class="main-content">
-        <h1 className="m-3">Welcome, {name}</h1>
-      </div>
+    <div>
+      <Navbar />
+      <Home />
+      <Panel data={airport} />
+      <Promotion />
+      <OurService />
+      <WhyUs />
+      <Testimonial />
+      <Footer />
     </div>
   );
 };

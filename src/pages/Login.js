@@ -28,7 +28,7 @@ const Login = () => {
       );
       const token = post.data.accessToken;
       sessionStorage.setItem("accessToken", token);
-      navigate("/dashboard");
+      navigate("/admin");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
