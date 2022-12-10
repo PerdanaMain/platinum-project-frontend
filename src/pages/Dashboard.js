@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
+import NavbarLogin from "../components/NavbarLogin";
 import Home from "../components/Home";
 import Panel from "../components/Panel";
 import Promotion from "../components/Promotion";
@@ -28,7 +28,7 @@ const Dashboard = () => {
   };
   return (
     <div>
-      <Navbar />
+      <NavbarLogin />
       <Home />
       <Panel data={airport} />
       <Promotion />

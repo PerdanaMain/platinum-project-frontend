@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Button from "react-bootstrap/Button";
@@ -28,7 +27,7 @@ const Login = () => {
       );
       const token = post.data.accessToken;
       sessionStorage.setItem("accessToken", token);
-      navigate("/admin");
+      navigate("/dashboard");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);

@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 const Sidebar = () => {
   const navigate = useNavigate();
   const logoutHandler = async () => {
@@ -25,16 +26,15 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="header">
         <div className="list-item">
-          <a href>
+          <a href="#" style={{"display":"flex"}}>
             <img
               src="./assets/landing/flit-logo.png"
               width={50}
               alt=""
               className="icon"
             />
-            <span className="description-header">
-              {" "}
-              <img src="./assets/landing/flit-teks.png" width={50} alt="" />
+            <span className="description-header"><br />
+              <p>Citra</p>
             </span>
           </a>
         </div>
@@ -42,37 +42,7 @@ const Sidebar = () => {
       </div>
       <div className="main">
         <div className="list-item">
-          <a href>
-            <img
-              src="./assets/dashboard/icon-dashboard.svg"
-              alt=""
-              className="icon"
-            />
-            <span className="description">Dashboard</span>
-          </a>
-        </div>
-        <div className="list-item">
-          <a href>
-            <img
-              src="./assets/dashboard/icon-analytics.png"
-              alt=""
-              className="icon"
-            />
-            <span className="description">Users</span>
-          </a>
-        </div>
-        <div className="list-item">
-          <a href>
-            <img
-              src="./assets/dashboard/icon-category.svg"
-              alt=""
-              className="icon"
-            />
-            <span className="description">Ticket</span>
-          </a>
-        </div>
-        <div className="list-item">
-          <a href>
+          <a href="/booking">
             <img
               src="./assets/dashboard/icon-team.svg"
               alt=""
@@ -82,20 +52,55 @@ const Sidebar = () => {
           </a>
         </div>
         <div className="list-item">
+          <a href="/wishlist">
+            <img
+              src="./assets/dashboard/icon-event.svg"
+              alt=""
+              className="icon"
+            />
+            <span className="description">Wishlist</span>
+          </a>
+        </div>
+        <div className="list-item">
+          <a href>
+            <img
+              src="./assets/dashboard/wallet.svg"
+              alt=""
+              className="icon"
+              style={{"width":"21px", "margin-left":"-5px"}}
+            />
+            <span className="description">E-wallet</span>
+          </a>
+        </div>
+        <div className="list-item">
+          <a href="/payment">
+            <img
+              src="./assets/dashboard/icon-event.svg"
+              alt=""
+              className="icon"
+            />
+            <span className="description">Wishlist</span>
+          </a>
+        </div>
+        <div className="list-item">
           <a href>
             <img
               src="./assets/dashboard/icon-event.svg"
               alt=""
               className="icon"
             />
-            <span className="description">Airport</span>
+            <span className="description">Wishlist</span>
           </a>
         </div>
         <div className="list-item">
-          <img src="./assets/dashboard/icon-event.svg" alt="" class="icon" />
-          <button className="btn" onClick={logoutHandler}>
-            <span className="description">Logout</span>
-          </button>
+          <a href>
+            <img
+              src="./assets/dashboard/icon-event.svg"
+              alt=""
+              className="icon"
+            />
+            <span className="description">Wishlist</span>
+          </a>
         </div>
       </div>
     </div>
