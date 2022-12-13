@@ -936,7 +936,12 @@ form a {
 
 
 /* Booking */
+.body-booking {
+  height: 1000px;
+}
+
 .container-booking {
+  display: flex;
   box-sizing: border-box;
   height: 196px;
   width: 700px;
@@ -947,6 +952,7 @@ form a {
 }
 
 .container-booking-white {
+  display: flex;
   box-sizing: border-box;
   height: 121px;
   width: 697px;
@@ -971,6 +977,7 @@ form a {
   margin-top: 15px;
   margin-left: 22px;
   margin-bottom: 20px;
+  box-shadow: 2px 2px 2px 2px rgb(0.1, 0.1, 0.1, 0.1);
 }
 
 
@@ -1008,13 +1015,68 @@ form a {
   background-color: #002561;
 }
 
+.history {
+  margin-top: 305px;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  .container-booking {
+    width: 85%;
+    height: 504px;
+    display: block;
+    margin-left: 30px;
+  }
+
+  .teks-booking {
+    padding-top: 19px;
+  }
+
+  .title-booking {
+    margin-left: 50px;
+  }
+
+  .desc-booking {
+    margin-left: 50px;
+  }
+
+  .link-next {
+    display: block;
+    margin-left: 50px;
+  }
+
+  .teks-cont b {
+    display: block;
+    margin-left: 16px;
+  }
+
+  .container-booking-white {
+    display: block;
+    width: 80%;
+    margin-top: 55px;
+    margin-left: 22px;
+    height: 265px;
+  }
+
+  .teks-white {
+    margin-left: -13px;
+    margin-right: 18px;
+  }
+
+
+}
+
+/* end of Booking */
+
+
 /* Wishlist */
+
 .wishlist {
   margin-bottom: 50px;
   margin-top: -27px;
 }
 
 .container-wishlist {
+  display: flex;
   box-sizing: border-box;
   height: 179px;
   width: 697px;
@@ -1034,4 +1096,306 @@ form a {
   width: 238px;
   height: 141px;
   margin: 19px;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+
+  .text-cont p {
+    width: 10px;
+  }
+
+  .container-wishlist {
+    padding: 5px;
+    display: block;
+    width: 100%;
+    margin-bottom: 188px;
+  }
+
+  .img-wishlist img {
+    width: 174px;
+    height: 141px;
+    margin: 12px;
+  }
+
+  .desc-img {
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+
+  .hdr2-wishlist {
+    font-size: 12px;
+    display: block;
+    margin-left: 15px;
+  }
+
+}
+
+/* end of wishlist */
+
+
+/* Payment */
+.payment-container {
+  background-color: #eeeeee;
+  width: 100%;
+  height: 800px;
+  padding: 25px
+}
+
+.payment-container img {
+  height: 25px;
+  width: 33px;
+  margin-left: 22px;
+}
+
+.payment-box {
+  display: flex;
+  margin: 15px;
+  margin-left: 26px;
+}
+
+.payment-metode span {
+  margin-left: 10px;
+  color: white;
+  font-size: 12px;
+  font-family: 'Poppins';
+}
+
+.header-payment {
+  text-align: center;
+  margin-left: -13px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.payment-metode {
+  width: 30%px;
+  height: 400px;
+  background-color: #002561;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.rincian-booking {
+  width: 200px;
+  height: 400px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.container-saldo {
+  padding: 15px;
+  margin-top: 25px;
+  width: 370px;
+  height: 420px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.container-jlmsaldo {
+  padding: 15px;
+  margin-top: 25px;
+  width: 200px;
+  height: 400px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.form-topup {
+  gap: 20px;
+  display: flex;
+}
+
+.right-desc {
+  margin-left: 110px;
+}
+
+.right-desc2 {
+  margin-left: 146px;
+}
+
+.right-desc3 {
+  margin-left: 151px;
+}
+
+.pay-btn {
+  margin-top: 10px;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  .container-saldo {
+    width: auto;
+  }
+
+  .right-desc {
+    margin-left: 25px;
+  }
+
+  .right-desc2 {
+    margin-left: 61px;
+  }
+
+  .right-desc3 {
+    margin-left: 67px;
+  }
+
+  .pay-btn {
+    margin-top: 24px;
+  }
+
+  .part3-booking p {
+    display: block;
+  }
+
+
+}
+
+/* end of Payment */
+
+
+/* Detail Booking */
+.rincian-booking .row-hdr {
+  margin: 15px;
+  margin-top: 5px;
+}
+
+.rincian-booking {
+  width: 250px;
+  height: 443px;
+}
+
+.name-hdr {
+  font-family: 'Poppins';
+  color: gray;
+  font-size: 14px;
+}
+
+.payment-btn {
+  text-decoration: none;
+}
+
+/* end of detail booking */
+
+
+/* Pemesanan */
+.pemesanan {
+  width: 100%;
+  margin: 21px;
+}
+
+.part3-booking-hdr {
+  box-sizing: border-box;
+  height: 83px;
+  width: 697px;
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 2px 2px rgb(0.1, 0.1, 0.1, 0.1);
+}
+
+.prt-hdr {
+  gap: 6px;
+  margin-left: 10px;
+  display: flex;
+  padding: 17px;
+}
+
+.border-booking {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.border-list {
+  border: solid 1px;
+  width: 151px;
+  justify-content: center;
+  height: 31px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.border-booking a {
+  color: black;
+  text-decoration: none;
+}
+
+.border-booking a:hover {
+  background-color: aliceblue;
+}
+
+.bdr-pesanan {
+  box-sizing: border-box;
+  height: 143px;
+  width: 697px;
+  border-radius: 5px;
+  background-color: aliceblue;
+  margin-top: 15px;
+  margin-left: -4px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 2px 2px rgb(0.1, 0.1, 0.1, 0.1);
+}
+
+.bdr-pesanan:hover {
+  box-shadow: 2px 2px 2px 2px rgb(0.1, 0.1, 0.1, 0.1);
+  transform: scale(1.02);
+}
+
+.nomine-bill {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.air-goals {
+  display: flex;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  .border-booking {
+    display: block;
+    margin-left: 47px;
+    margin-top: 26px;
+  }
+
+  .border-list {
+    margin-bottom: 20px;
+  }
+
+  .header-booking {
+    margin-left: 21px;
+  }
+
+  .bdr-pesanan {
+    margin: 5px;
+    display: block;
+    width: 262px;
+    height: 282px;
+  }
+
+  .part3-booking-hdr {
+    margin-left: 12px;
+    width: 233px;
+    height: 92px;
+  }
+
+  .pemesanan {
+    width: 100%;
+  }
+
+  .payment-box {
+    display: block;
+    width: 755px;
+  }
+
+  .air-goals {
+    margin-top: 5px;
+  }
+
+  .price {
+    margin-left: -22px;
+  }
+
 }

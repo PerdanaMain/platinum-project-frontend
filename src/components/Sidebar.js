@@ -62,7 +62,7 @@ const Sidebar = () => {
           </a>
         </div>
         <div className="list-item">
-          <a href>
+          <a href="/payment">
             <img
               src="./assets/dashboard/wallet.svg"
               alt=""
@@ -73,7 +73,7 @@ const Sidebar = () => {
           </a>
         </div>
         <div className="list-item">
-          <a href="/payment">
+          <a href>
             <img
               src="./assets/dashboard/icon-event.svg"
               alt=""

@@ -7,6 +7,8 @@ import Booking from "../components/Booking";
 import Footer from "../components/Footer";
 import Wishlist from "../components/Wishlist";
 import Payment from "../components/Payment";
+import { Saldo } from "../components/TopUpSaldo";
+import Pemesanan from "../components/Pemesanan";
 
 
 const UserDashboard = () => {
@@ -16,8 +18,9 @@ const UserDashboard = () => {
             <div className="container-dash">
                 <Sidebar />
                 {/* <Booking/> */}
-                {/* <Wishlist/> */}
-                {<Payment/>}
+                {/* <Saldo /> */}
+                <Wishlist/>
+                {/* {<Payment/>} */}
             </div>
             <Footer/>
         </div>

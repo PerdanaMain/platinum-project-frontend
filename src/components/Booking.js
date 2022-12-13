@@ -1,11 +1,13 @@
 import React from 'react'
+import HistoryTransaksi from './HistoryTransaksi'
 import NoBooking from './NoBooking'
+import Pemesanan from './Pemesanan'
 
 
 const Booking = () => {
     return (
-        <div>
-            <div className="col container-booking" style={{ "display": "flex" }}>
+        <div className="body-booking">
+            <div className="col container-booking">
                 <div className="col-4">
                 <p className="teks-booking">Easy Reschedule</p>
                 </div>
@@ -16,23 +18,18 @@ const Booking = () => {
                     <a href="#" className="link-next">Pelajari Selengkapnya</a>
                 </div>
             </div>
-            <div className="teks-cont mt-5" style={{"margin-left":"22px",
-            "font-family":"Poppins",
+            <div className="teks-cont mt-5" style={{marginLeft:"22px",
+            fontFamily:"Poppins",
             "font-size":"23px"}}><b>E-ticket & Voucher Aktif</b>
             </div>
+            {/* <div col>
+                <Pemesanan/>
+            </div> */}
             <div>
                 <NoBooking/>
             </div>
-            <div className="col mt-5">
-                <p style={{"margin-left":"22px",
-                            "font-family":"Poppins",
-                            "font-size":"23px"}}>
-                <b>Daftar Pembelian</b>
-                </p>
-                <div className="part3-booking">
-                    <br />
-                    <p style={{"margin-left":"22px"}}>Lihat <span><a href="" style={{"text-decoration":"none"}}>Riwayat Pembelian</a></span></p>
-                </div>
+            <div>
+                <HistoryTransaksi/>
             </div>
         </div>
     )
