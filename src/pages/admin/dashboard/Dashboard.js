@@ -23,7 +23,7 @@ const Dashboard = () => {
       } else {
         const decode = jwt_decode(accessToken);
         setUserId(decode.userId);
-        if (userId !== 1) {
+        if (parseInt(userId) !== 1) {
           navigate("/404");
         }
       }
