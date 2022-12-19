@@ -1,0 +1,6 @@
+.bookingAdmin {
+  display: flex;
+}
+.bookingAdmin .bookingAdminContainer {
+  flex: 6;
+}
