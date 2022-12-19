@@ -10,22 +10,16 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const accessToken = sessionStorage.getItem("accessToken");
 
-  const [userId, setUserId] = useState("");
+  const [roleId, setRoleId] = useState(1);
 
   useEffect(() => {
     decoder();
-  });
+  }, []);
 
   const decoder = () => {
     try {
       if (!accessToken) {
         navigate("/404");
-      } else {
-        const decode = jwt_decode(accessToken);
-        setUserId(decode.userId);
-        if (parseInt(userId) !== 1) {
-          navigate("/404");
-        }
       }
     } catch (error) {
       console.log(error);

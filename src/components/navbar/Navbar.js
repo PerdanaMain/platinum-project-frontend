@@ -42,10 +42,12 @@ const Navbar = () => {
 
   const decoder = () => {
     try {
-      const decoded = jwt_decode(accessToken);
-      setFirstName(decoded.firstname);
-      setLastName(decoded.lastname);
-      setName(firstName + " " + lastName);
+      if (accessToken) {
+        const decoded = jwt_decode(accessToken);
+        setFirstName(decoded.firstname);
+        setLastName(decoded.lastname);
+        setName(firstName + " " + lastName);
+      }
     } catch (error) {
       console.log(error.message);
     }

@@ -21,12 +21,6 @@ const Ticket = () => {
     try {
       if (!accessToken) {
         navigate("/404");
-      } else {
-        const decode = jwt_decode(accessToken);
-        setUserId(decode.userId);
-        if (parseInt(userId) !== 1) {
-          navigate("/404");
-        }
       }
     } catch (error) {
       console.log(error);

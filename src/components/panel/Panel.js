@@ -918,6 +918,9 @@ const Panel = (props) => {
                               {data.flight.ArrivalTerminal.country}
                             </p>
                           </div>
+                          <button className="btn btn-outline-danger mt-3">
+                            Add To Wishlist
+                          </button>
                         </div>
                         <div className="col-md">
                           <div className="card-body text-center">
