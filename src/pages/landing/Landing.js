@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import server from "../../server";
 
 import Navbar from "../../components/navbar/Navbar";
 import Jumbotron from "../../components/jumbotron/Jumbotron";
@@ -15,12 +16,10 @@ const Landing = () => {
 
   useEffect(() => {
     getAirport();
-  });
+  }, []);
   const getAirport = async () => {
     try {
-      const get = await axios.get(
-        "https://platinum-project-backend-production.up.railway.app/v1/api/airports"
-      );
+      const get = await axios.get(`https://${server}/v1/api/airports`);
       setAirport(get.data.data);
     } catch (error) {
       console.log(error);

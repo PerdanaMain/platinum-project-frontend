@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import server from "../../server";
 
 import "./navbar.css";
 
@@ -23,14 +24,11 @@ const Navbar = () => {
   const logoutHandler = async () => {
     const token = sessionStorage.getItem("accessToken");
     try {
-      await axios.delete(
-        "https://platinum-project-backend-production.up.railway.app/v1/api/logout",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      await axios.delete(`https://${server}/v1/api/logout`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       sessionStorage.clear();
       navigate("/");
     } catch (error) {
@@ -48,7 +46,9 @@ const Navbar = () => {
       setFirstName(decoded.firstname);
       setLastName(decoded.lastname);
       setName(firstName + " " + lastName);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
@@ -94,10 +94,18 @@ const Navbar = () => {
             <DropdownButton
               id="dropdown-item-button"
               className="me-5"
-              title={"Welcome, " + name}
+              title={name}
             >
-              <Dropdown.Item as="button">Action</Dropdown.Item>
-              <Dropdown.Item as="button">Another action</Dropdown.Item>
+              <Dropdown.Item href="/users/profile">Profile</Dropdown.Item>
+              <Dropdown.Item href="/users/order">My Order</Dropdown.Item>
+              <Dropdown.Item href="/users/wishlist">Wish List</Dropdown.Item>
+              <Dropdown.Item href="/users/notification">
+                Notification
+              </Dropdown.Item>
+              <Dropdown.Item href="/users/wallet">Wallet</Dropdown.Item>
+              <Dropdown.Item href="/users/history">
+                History Payment
+              </Dropdown.Item>
               <Dropdown.Item as="button" onClick={logoutHandler}>
                 Logout
               </Dropdown.Item>

@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import server from "../../server";
 
 import "./panel.css";
 
@@ -47,14 +48,22 @@ const Panel = (props) => {
     departureAirport: "",
     arrivalAirport: "",
     departureDate: "",
+    departureTime: "",
+    arrivalDate: "",
+    arrivalTime: "",
     price: "",
+    class: "",
   });
   const [secondTicket, setSecondTicket] = useState({
     ticket_id: "",
     departureAirport: "",
     arrivalAirport: "",
     departureDate: "",
+    departureTime: "",
+    arrivalDate: "",
+    arrivalTime: "",
     price: "",
+    class: "",
   });
 
   // For Alert Show
@@ -97,10 +106,10 @@ const Panel = (props) => {
     }
     try {
       const get = await axios.get(
-        `https://platinum-project-backend-production.up.railway.app/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`
+        `https://${server}/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`
       );
       const secondGet = await axios.get(
-        `https://platinum-project-backend-production.up.railway.app/v1/api/tickets/search?departure=${ke}&arrival=${dari}&datedeparture=${pulang}`
+        `https://${server}/v1/api/tickets/search?departure=${ke}&arrival=${dari}&datedeparture=${pulang}`
       );
       setFlightResult({
         roundTrip: {
@@ -110,8 +119,8 @@ const Panel = (props) => {
         oneTrip: undefined,
       });
       console.log({
-        firstlink: `https://platinum-project-backend-production.up.railway.app/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`,
-        secondlink: `https://platinum-project-backend-production.up.railway.app/v1/api/tickets/search?departure=${ke}&arrival=${dari}&datedeparture=${pulang}`,
+        firstlink: `https://${server}/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`,
+        secondlink: `https://${server}/v1/api/tickets/search?departure=${ke}&arrival=${dari}&datedeparture=${pulang}`,
       });
     } catch (error) {
       console.log(error.message);
@@ -142,7 +151,7 @@ const Panel = (props) => {
 
     try {
       const get = await axios.get(
-        `https://platinum-project-backend-production.up.railway.app/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`
+        `https://${server}/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`
       );
 
       setFlightResult({
@@ -151,10 +160,6 @@ const Panel = (props) => {
           secondTrip: undefined,
         },
         oneTrip: get.data.data,
-      });
-      console.log(flightResult);
-      console.log({
-        link: `https://platinum-project-backend-production.up.railway.app/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`,
       });
     } catch (error) {
       console.log(error.message);
@@ -203,8 +208,8 @@ const Panel = (props) => {
   const bookHandler = async () => {
     const accessToken = sessionStorage.getItem("accessToken");
     try {
-      const post = await axios.post(
-        "https://platinum-project-backend-production.up.railway.app/v1/api/booking",
+      await axios.post(
+        `https://${server}/v1/api/booking`,
         {
           ticket: {
             ticket_id_departure: firstTicket.ticket_id,
@@ -224,10 +229,42 @@ const Panel = (props) => {
 
       sessionStorage.setItem("firstTicket", JSON.stringify(firstTicket));
       sessionStorage.setItem("secondTicket", JSON.stringify(secondTicket));
+      sessionStorage.setItem("passengerData", JSON.stringify(savePassenger));
       sessionStorage.setItem(
-        "passengerBulk",
-        JSON.stringify(post.data.data.passengerBulk)
+        "flightData",
+        JSON.stringify({ firstTicket, secondTicket })
       );
+      navigate("/users/booking");
+    } catch (error) {
+      console.log(error.message);
+      setErr("Server is busy");
+      return setShow(true);
+    }
+  };
+  const bookHandlerOneTrip = async () => {
+    const accessToken = sessionStorage.getItem("accessToken");
+    try {
+      const post = await axios.post(
+        `https://${server}/v1/api/booking`,
+        {
+          ticket: {
+            ticket_id_departure: firstTicket.ticket_id,
+            totalPrice: (firstTicket.price + secondTicket.price) * count,
+          },
+          passanger: savePassenger,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      console.log(post.data.data);
+      sessionStorage.setItem("firstTicket", JSON.stringify(firstTicket));
+      sessionStorage.setItem("secondTicket", JSON.stringify(secondTicket));
+      sessionStorage.setItem("passengerData", JSON.stringify(savePassenger));
+      sessionStorage.setItem("flightData", JSON.stringify(firstTicket));
+      sessionStorage.setItem("successBooking", JSON.stringify(post.data.data));
       navigate("/users/booking");
     } catch (error) {
       console.log(error.message);
@@ -588,8 +625,12 @@ const Panel = (props) => {
                                       data.flight.DepartureTerminal.code,
                                     arrivalAirport:
                                       data.flight.ArrivalTerminal.code,
-                                    departureDate: data.departureDate,
+                                    departureDate: data.flight.departureDate,
+                                    departureTime: data.flight.departureTime,
+                                    arrivalDate: data.flight.arrivalDate,
+                                    arrivalTime: data.flight.arrivalTime,
                                     price: data.price,
+                                    class: data.class.type,
                                   });
                                 }}
                               >
@@ -644,8 +685,12 @@ const Panel = (props) => {
                                       data.flight.DepartureTerminal.code,
                                     arrivalAirport:
                                       data.flight.ArrivalTerminal.code,
-                                    departureDate: data.departureDate,
+                                    departureDate: data.flight.departureDate,
+                                    departureTime: data.flight.departureTime,
+                                    arrivalDate: data.flight.arrivalDate,
+                                    arrivalTime: data.flight.arrivalTime,
                                     price: data.price,
+                                    class: data.class.type,
                                   });
                                 }}
                               >
@@ -843,7 +888,10 @@ const Panel = (props) => {
                   </div>
                   {count <= savePassenger.length ? (
                     <div className="d-grid mt-3">
-                      <button className="btn btn-success" onClick={bookHandler}>
+                      <button
+                        className="btn btn-success"
+                        onClick={bookHandlerOneTrip}
+                      >
                         Book Ticket
                       </button>
                     </div>
@@ -899,8 +947,12 @@ const Panel = (props) => {
                                     data.flight.DepartureTerminal.code,
                                   arrivalAirport:
                                     data.flight.ArrivalTerminal.code,
-                                  departureDate: data.departureDate,
+                                  departureDate: data.flight.departureDate,
+                                  departureTime: data.flight.departureTime,
+                                  arrivalDate: data.flight.arrivalDate,
+                                  arrivalTime: data.flight.arrivalTime,
                                   price: data.price,
+                                  class: data.class.type,
                                 });
                               }}
                             >
@@ -920,7 +972,7 @@ const Panel = (props) => {
                         </div>
                         <div className="card-body border-bottom">
                           <p className="text-center text-muted">
-                            Passenger Identity {savePassenger.length}
+                            {savePassenger.length} Passenger Identity Added
                           </p>
                           <div className="row mb-2">
                             <div className="col-md-4">

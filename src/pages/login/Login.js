@@ -6,6 +6,7 @@ import Footer from "../../components/footer/Footer";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
+import server from "../../server";
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -27,13 +28,10 @@ const Login = () => {
   const Login = async (e) => {
     e.preventDefault();
     try {
-      const post = await axios.post(
-        "https://platinum-project-backend-production.up.railway.app/v1/api/login",
-        {
-          email: email,
-          password: password,
-        }
-      );
+      const post = await axios.post(`https://${server}/v1/api/login`, {
+        email: email,
+        password: password,
+      });
       const token = post.data.accessToken;
       sessionStorage.setItem("accessToken", token);
       const decoded = jwt_decode(token);

@@ -1,8 +1,18 @@
 /* booking data Step 1 */
-.booking-container .card{
-
+.booking .container.card{
+  width: 700px;
   margin-top: 20px;
-  margin-bottom: 20px;
-  
+  margin-bottom: 40px;
 }
+
+.action-booking{
+  margin-left: 500px;
+}
+.container.booking .container.card{
+  border: none;
+}
+/* .booking .container.card .card-header{
+  background-color: #fff;
+} */
+
 /* end Steep 1 */

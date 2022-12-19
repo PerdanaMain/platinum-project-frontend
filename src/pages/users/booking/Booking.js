@@ -4,8 +4,9 @@ import Navbar from "../../../components/navbar/Navbar";
 import Action from "../../../components/actions/ActionButton";
 import Footer from "../../../components/footer/Footer";
 
-import axios from "axios";
 import jwt_decode from "jwt-decode";
+
+import "./booking.css";
 
 const Booking = () => {
   const navigate = useNavigate();
@@ -15,7 +16,9 @@ const Booking = () => {
   const [bookingData, setBookingData] = useState({
     firstTicket: "",
     secondTicket: "",
-    passengerBulk: "",
+    passengerData: "",
+    flightData: "",
+    successBooking: "",
   });
 
   const [userLogin, setUserLogin] = useState({
@@ -47,6 +50,9 @@ const Booking = () => {
         setBookingData({
           firstTicket: JSON.parse(sessionStorage.getItem("firstTicket")),
           secondTicket: JSON.parse(sessionStorage.getItem("secondTicket")),
+          flightData: JSON.parse(sessionStorage.getItem("flightData")),
+          passengerData: JSON.parse(sessionStorage.getItem("passengerData")),
+          successBooking: JSON.parse(sessionStorage.getItem("successBooking")),
         });
       }
     } catch (error) {
@@ -54,7 +60,7 @@ const Booking = () => {
     }
   };
   return (
-    <div>
+    <div className="booking-page">
       <Navbar />
       <Action data={bookingData} user={userLogin} />
       <Footer />

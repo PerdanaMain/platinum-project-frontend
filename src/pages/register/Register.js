@@ -6,6 +6,7 @@ import Footer from "../../components/footer/Footer";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
+import server from "../../server";
 import "./register.css";
 
 // import image
@@ -54,19 +55,16 @@ const Register = () => {
     }
 
     try {
-      await axios.post(
-        "https://platinum-project-backend-production.up.railway.app/v1/api/register",
-        {
-          firstname: formData.firstName,
-          lastname: formData.lastName,
-          phone: formData.phone,
-          birthdate: formData.birthdate,
-          gender: formData.gender,
-          email: formData.email,
-          password: formData.password,
-          confPassword: formData.confPassword,
-        }
-      );
+      await axios.post(`https://${server}/v1/api/register`, {
+        firstname: formData.firstName,
+        lastname: formData.lastName,
+        phone: formData.phone,
+        birthdate: formData.birthdate,
+        gender: formData.gender,
+        email: formData.email,
+        password: formData.password,
+        confPassword: formData.confPassword,
+      });
       setMsg(success);
       navigate("/auth");
     } catch (error) {
