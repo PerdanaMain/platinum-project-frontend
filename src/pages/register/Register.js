@@ -55,7 +55,7 @@ const Register = () => {
     }
 
     try {
-      await axios.post(`https://${server}/v1/api/register`, {
+      await axios.post(`${server}/v1/api/register`, {
         firstname: formData.firstName,
         lastname: formData.lastName,
         phone: formData.phone,

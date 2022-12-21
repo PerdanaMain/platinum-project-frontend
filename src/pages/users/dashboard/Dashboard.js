@@ -20,7 +20,7 @@ const Dashboard = () => {
   useEffect(() => {
     decoder();
     getAirport();
-  }, []);
+  });
 
   const decoder = () => {
     try {
@@ -33,7 +33,7 @@ const Dashboard = () => {
   };
   const getAirport = async () => {
     try {
-      const get = await axios.get(`https://${server}/v1/api/airports`);
+      const get = await axios.get(`${server}/v1/api/airports`);
       setAirport(get.data.data);
     } catch (error) {
       console.log(error);

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Stepper, Step } from "react-form-stepper";
 import { MdDescription } from "react-icons/md";
 import StepWizard from "react-step-wizard";
@@ -50,42 +51,15 @@ const ActionButtons = (props) => {
           </Button>
         )}{" "}
       </ButtonGroup>
-      <ButtonGroup className="d-grid">
-        {props.currentStep === props.totalSteps && (
-          <Button variant="primary" onClick={handleFinish}>
-            Add To WishList
-          </Button>
-        )}{" "}
-      </ButtonGroup>
     </ButtonToolbar>
   );
 };
 
 const One = (props) => {
   const user = props.user;
-  // const [info1, setInfo1] = useState({});
-  const [error, setError] = useState("");
-
-  // const onInputChanged = (event) => {
-  //   const targetName = event.target.name;
-  //   const targetValue = event.target.value;
-
-  //   setInfo1((info1) => ({
-  //     ...info1,
-  //     [targetName]: targetValue,
-  //   }));
-  // };
 
   const validate = () => {
-    // if (!info1.name) setError("Name is mandatory field");
-    // else {
-    //   setError("");
-    //   props.nextStep();
-    //   props.userCallback(info1);
-    // }
-    setError("");
     props.nextStep();
-    // props.userCallback(info1);
   };
 
   return (
@@ -729,16 +703,18 @@ const Three = (props) => {
 };
 
 const Sample = (props) => {
+  const navigate = useNavigate();
   const [stepWizard, setStepWizard] = useState(null);
   const [user, setUser] = useState({});
   const [activeStep, setActiveStep] = useState(0);
 
   const assignStepWizard = (instance) => {
+    console.log(stepWizard);
     setStepWizard(instance);
   };
 
   const assignUser = (val) => {
-    console.log("parent receive user callback");
+    console.log("parent receive user callback", user);
     console.log(val);
     setUser((user) => ({
       ...user,
@@ -753,7 +729,7 @@ const Sample = (props) => {
   };
 
   const handleComplete = () => {
-    alert("You r done. TQ");
+    navigate("/users/payment");
   };
 
   return (

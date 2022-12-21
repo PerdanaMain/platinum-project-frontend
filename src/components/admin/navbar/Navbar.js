@@ -1,11 +1,11 @@
 import React from "react";
 
 import "./navbar.css";
-const Navbar = () => {
+const Navbar = ({ name }) => {
   return (
     <div className="navbar-admin">
       <div className="wrapper">
-        <h5 className="my-4">Welcome, </h5>
+        <h5 className="my-4">Welcome, {name}</h5>
         <div className="items">
           <div className="item"></div>
           <div className="item"></div>

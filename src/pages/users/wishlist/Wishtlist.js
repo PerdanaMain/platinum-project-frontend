@@ -36,7 +36,7 @@ const Wishtlist = () => {
   };
   const getWishList = async () => {
     try {
-      const get = await axios.get(`https://${server}/v1/api/bookings`, {
+      const get = await axios.get(`${server}/v1/api/bookings`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

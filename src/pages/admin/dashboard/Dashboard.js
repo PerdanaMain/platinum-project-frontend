@@ -9,14 +9,14 @@ import "./dashboard.css";
 const Dashboard = () => {
   const navigate = useNavigate();
   const accessToken = sessionStorage.getItem("accessToken");
-
-  const [roleId, setRoleId] = useState(1);
+  const [name, setName] = useState("");
 
   useEffect(() => {
-    decoder();
-  }, []);
+    isLogin();
+    isAdmin();
+  });
 
-  const decoder = () => {
+  const isLogin = () => {
     try {
       if (!accessToken) {
         navigate("/404");
@@ -25,11 +25,17 @@ const Dashboard = () => {
       console.log(error);
     }
   };
+  const isAdmin = () => {
+    const decode = jwt_decode(accessToken);
+    console.log({ id: decode.role_id, type: typeof decode.role_id });
+    if (decode.role_id !== 1) return navigate("/404");
+    setName(decode.firstname + " " + decode.lastname);
+  };
   return (
     <div className="home">
       <Sidebar />
       <div className="homeContainer">
-        <Navbar />
+        <Navbar name={name} />
         <div className="widgets">
           <p>Ini Widgets</p>
         </div>

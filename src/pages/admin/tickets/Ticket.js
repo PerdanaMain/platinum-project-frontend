@@ -10,11 +10,11 @@ import "./ticket.css";
 const Ticket = () => {
   const navigate = useNavigate();
   const accessToken = sessionStorage.getItem("accessToken");
-
-  const [userId, setUserId] = useState("");
+  const [name, setName] = useState("");
 
   useEffect(() => {
     decoder();
+    isAdmin();
   });
 
   const decoder = () => {
@@ -26,11 +26,17 @@ const Ticket = () => {
       console.log(error);
     }
   };
+  const isAdmin = () => {
+    const decode = jwt_decode(accessToken);
+    console.log({ id: decode.role_id, type: typeof decode.role_id });
+    if (decode.role_id !== 1) return navigate("/404");
+    setName(decode.firstname + " " + decode.lastname);
+  };
   return (
     <div className="ticket">
       <Sidebar />
       <div className="ticketContainer">
-        <Navbar />
+        <Navbar name={name} />
         <div className="content container mt-4">
           <Table striped bordered hover className="mt-4">
             <thead>

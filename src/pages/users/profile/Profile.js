@@ -72,11 +72,11 @@ const Profile = () => {
   const saveHandler = async (e) => {
     e.preventDefault();
     let formData = new FormData();
-    formData.set("file", file);
-    console.log(formData);
+    formData.append("file", file);
+    console.log({ formData, file });
     try {
       await axios.put(
-        `https://${server}/v1/api/users/profile`,
+        `${server}/v1/api/users/profile`,
         {
           email,
           firstname: firstName,
@@ -94,17 +94,24 @@ const Profile = () => {
           },
         }
       );
-      const post = axios.post(`https://${server}/v1/api/upload`, formData, {
-        headers: {
-          "Content-type": "multipart/form-data",
+      const post = axios.post(
+        `${server}/v1/api/upload`,
+        {
+          file: formData,
         },
-      });
+        {
+          headers: {
+            "Content-type": "multipart/form-data",
+          },
+        }
+      );
       console.log(post.data);
-      // return setShow(true);
+      setMsg("Profile Updated Successfully");
+      return setShow(true);
     } catch (error) {
       console.log(error.message);
       setErr(error.message);
-      // return setShow(true);
+      return setShow(true);
     }
   };
   return (

@@ -106,10 +106,10 @@ const Panel = (props) => {
     }
     try {
       const get = await axios.get(
-        `https://${server}/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`
+        `${server}/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`
       );
       const secondGet = await axios.get(
-        `https://${server}/v1/api/tickets/search?departure=${ke}&arrival=${dari}&datedeparture=${pulang}`
+        `${server}/v1/api/tickets/search?departure=${ke}&arrival=${dari}&datedeparture=${pulang}`
       );
       setFlightResult({
         roundTrip: {
@@ -119,8 +119,8 @@ const Panel = (props) => {
         oneTrip: undefined,
       });
       console.log({
-        firstlink: `https://${server}/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`,
-        secondlink: `https://${server}/v1/api/tickets/search?departure=${ke}&arrival=${dari}&datedeparture=${pulang}`,
+        firstlink: `${server}/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`,
+        secondlink: `${server}/v1/api/tickets/search?departure=${ke}&arrival=${dari}&datedeparture=${pulang}`,
       });
     } catch (error) {
       console.log(error.message);
@@ -151,7 +151,7 @@ const Panel = (props) => {
 
     try {
       const get = await axios.get(
-        `https://${server}/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`
+        `${server}/v1/api/tickets/search?departure=${dari}&arrival=${ke}&datedeparture=${pergi}`
       );
 
       setFlightResult({
@@ -209,7 +209,7 @@ const Panel = (props) => {
     const accessToken = sessionStorage.getItem("accessToken");
     try {
       await axios.post(
-        `https://${server}/v1/api/booking`,
+        `${server}/v1/api/booking`,
         {
           ticket: {
             ticket_id_departure: firstTicket.ticket_id,
@@ -245,7 +245,7 @@ const Panel = (props) => {
     const accessToken = sessionStorage.getItem("accessToken");
     try {
       const post = await axios.post(
-        `https://${server}/v1/api/booking`,
+        `${server}/v1/api/booking`,
         {
           ticket: {
             ticket_id_departure: firstTicket.ticket_id,

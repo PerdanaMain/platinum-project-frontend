@@ -24,7 +24,7 @@ const Navbar = () => {
   const logoutHandler = async () => {
     const token = sessionStorage.getItem("accessToken");
     try {
-      await axios.delete(`https://${server}/v1/api/logout`, {
+      await axios.delete(`${server}/v1/api/logout`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

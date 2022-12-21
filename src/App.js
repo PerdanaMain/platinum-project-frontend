@@ -15,6 +15,7 @@ import Wishlist from "./pages/users/wishlist/Wishtlist";
 import Wallet from "./pages/users/wallet/Wallet";
 import History from "./pages/users/history/History";
 import Notification from "./pages/users/notification/Notification";
+import Payment from "./pages/users/payment/Payment";
 
 // Admins
 import DashboardAdmin from "./pages/admin/dashboard/Dashboard";
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="wallet" element={<Wallet />} />
           <Route path="history" element={<History />} />
           <Route path="notification" element={<Notification />} />
+          <Route path="payment/:paymentId" element={<Payment />} />
         </Route>
         <Route path="/admin">
           <Route index element={<DashboardAdmin />} />

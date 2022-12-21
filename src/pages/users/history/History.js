@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import axios from "axios";
 
 // components
 import Navbar from "../../../components/navbar/Navbar";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
+
+import server from "../../../server";
 
 import "./history.css";
 const History = () => {
@@ -13,10 +16,12 @@ const History = () => {
   const accessToken = sessionStorage.getItem("accessToken");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
+  const [history, setHistory] = useState("");
 
   useEffect(() => {
     decoder();
-  }, []);
+    getHistory();
+  });
   const decoder = async () => {
     try {
       if (!accessToken) {
@@ -28,6 +33,19 @@ const History = () => {
       }
     } catch (error) {
       console.log(error);
+    }
+  };
+  const getHistory = async () => {
+    try {
+      const get = await axios.get(`${server}/v1/api/payments`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      setHistory(get.data.data);
+    } catch (error) {
+      console.log(error.message);
+      setHistory("");
     }
   };
   return (
@@ -54,6 +72,7 @@ const History = () => {
                 <strong>{firstname + " " + lastname}</strong>
               </p>
             </div>
+            {history === "" ? "" : ""}
           </div>
         </div>
       </div>
