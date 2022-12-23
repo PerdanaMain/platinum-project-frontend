@@ -21,9 +21,13 @@ import Payment from "./pages/users/payment/Payment";
 import DashboardAdmin from "./pages/admin/dashboard/Dashboard";
 import Users from "./pages/admin/users/User";
 import UpdateUser from "./pages/admin/users/update/Update";
-import Tickets from "./pages/admin/tickets/Ticket";
-import UpdateTicket from "./pages/admin/tickets/update/Update";
+import Flight from "./pages/admin/flights/Flight";
+import NewFlight from "./pages/admin/flights/new/New";
+import UpdateFlight from "./pages/admin/flights/update/Update";
 import Bookings from "./pages/admin/bookings/Booking";
+import Airport from "./pages/admin/airports/Airport";
+import NewAirport from "./pages/admin/airports/new/New";
+import UpdateAirport from "./pages/admin/airports/update/Update";
 const App = () => {
   return (
     <BrowserRouter>
@@ -49,8 +53,12 @@ const App = () => {
           <Route index element={<DashboardAdmin />} />
           <Route path="users" element={<Users />} />
           <Route path="users/:userId" element={<UpdateUser />} />
-          <Route path="tickets" element={<Tickets />} />
-          <Route path="tickets/:ticketId" element={<UpdateTicket />} />
+          <Route path="flights" element={<Flight />} />
+          <Route path="newflight" element={<NewFlight />} />
+          <Route path="flights/:flightId" element={<UpdateFlight />} />
+          <Route path="airports" element={<Airport />} />
+          <Route path="newairport" element={<NewAirport />} />
+          <Route path="airports/:airportId" element={<UpdateAirport />} />
           <Route path="bookings" element={<Bookings />} />
         </Route>
         <Route path="*" element={<Navigate to="/404" />} />

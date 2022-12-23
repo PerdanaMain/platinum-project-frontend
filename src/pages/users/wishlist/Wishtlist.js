@@ -56,6 +56,18 @@ const Wishtlist = () => {
             <Sidebar />
           </div>
           <div className="col-xl-7 border-right">
+            <div
+              className="teks-cont"
+              style={{
+                marginLeft: "22px",
+                fontSize: "23px",
+              }}
+            >
+              <b>My Wishlist</b>
+              <p style={{ fontSize: "15px" }} className="hdr2-wishlist">
+                Tempat untuk menyimpan <span> item favorit anda!</span>
+              </p>
+            </div>
             {wishlist !== "" ? (
               <div className="wishlist">
                 <div

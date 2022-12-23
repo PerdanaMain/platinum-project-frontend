@@ -27,7 +27,7 @@ const Dashboard = () => {
   };
   const isAdmin = () => {
     const decode = jwt_decode(accessToken);
-    console.log({ id: decode.role_id, type: typeof decode.role_id });
+
     if (decode.role_id !== 1) return navigate("/404");
     setName(decode.firstname + " " + decode.lastname);
   };

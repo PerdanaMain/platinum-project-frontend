@@ -37,7 +37,7 @@ const History = () => {
   };
   const getHistory = async () => {
     try {
-      const get = await axios.get(`${server}/v1/api/payments`, {
+      const get = await axios.get(`${server}/v1/api/history`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -65,14 +65,43 @@ const History = () => {
             >
               <b>History Payment</b>
             </p>
-            <div className="part3-booking">
-              <br />
-              <p className="ms-3 ">
-                History Payment For{" "}
-                <strong>{firstname + " " + lastname}</strong>
-              </p>
-            </div>
-            {history === "" ? "" : ""}
+
+            {history === "" ? (
+              <div>
+                <div className="col container-booking-white">
+                  <div
+                    className="teks-white"
+                    style={{
+                      marginLeft: "50px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <p className="teks-white">
+                      <b>Belum Ada Pesanan</b>
+                    </p>
+                    <p
+                      className="teks-white"
+                      style={{ fontSize: "13px", textAlign: "justify" }}
+                    >
+                      Seluruh pesanan anda akan muncul di sini, tapi kinni anda
+                      belum punya satu pun. <br />
+                      Mari buat pesanan{" "}
+                      <a href="/users" style={{ textDecoration: "none" }}>
+                        disini
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="part3-booking">
+                <br />
+                <p className="ms-3 ">
+                  History Payment For{" "}
+                  <strong>{firstname + " " + lastname}</strong>
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

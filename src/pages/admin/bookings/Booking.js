@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
 import Navbar from "../../../components/admin/navbar/Navbar";
@@ -67,7 +67,7 @@ const Booking = () => {
               <div className="col-md-4 my-2" key={index}>
                 <Accordion defaultActiveKey="0" flush>
                   <Accordion.Item>
-                    <Accordion.Header>
+                    <Accordion.Header className="text-center">
                       Booking ID : {data.booking_id}
                     </Accordion.Header>
                     <Accordion.Body>

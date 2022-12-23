@@ -46,11 +46,7 @@ const Sidebar = () => {
               <span>Users</span>
             </div>
           </Link>
-          <Link to="/admin/tickets" style={{ textDecoration: "none" }}>
-            <div className="li">
-              <span>Tickets</span>
-            </div>
-          </Link>
+
           <Link to="/admin/bookings" style={{ textDecoration: "none" }}>
             <div className="li">
               <span>Bookings</span>
@@ -61,11 +57,7 @@ const Sidebar = () => {
               <span>Flights</span>
             </div>
           </Link>
-          <Link to="/admin/passengers" style={{ textDecoration: "none" }}>
-            <div className="li">
-              <span>Passengers</span>
-            </div>
-          </Link>
+
           <Link to="/admin/airports" style={{ textDecoration: "none" }}>
             <div className="li">
               <span>Airports</span>
