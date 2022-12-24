@@ -25,7 +25,7 @@ const Update = () => {
 
   useEffect(() => {
     getUser();
-  });
+  }, []);
   const getUser = async () => {
     try {
       const get = await axios.get(`${server}/v1/api/users/${userId}`);

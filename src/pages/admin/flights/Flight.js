@@ -69,7 +69,7 @@ const Flight = () => {
         },
       });
       setErr(del.data.msg);
-      setShow(true);
+      return setShow(true);
     } catch (error) {
       console.log(error.message);
       setErr(error.message);
@@ -202,7 +202,7 @@ const Flight = () => {
           </Modal.Header>
 
           <Modal.Body>
-            {err === "Added Flight Successfully" ? (
+            {err === "Delete Flight Successfully" ? (
               <div className="text-success d-flex align-items-center">
                 <i className="bi bi-check-all"></i>
                 <div className="ps-3">{err}</div>
