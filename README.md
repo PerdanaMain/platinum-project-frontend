@@ -1,1 +1,0 @@
-# platinum-project-frontend
