@@ -65,7 +65,9 @@ const Order = () => {
           <div className="col-lg-7 border-right">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h4 class=" heading-line">
-                My Order <i class="fa fa-sticky-note text-muted"></i>
+                <b>
+                  My Order <i class="fa fa-sticky-note text-muted"></i>
+                </b>
               </h4>
             </div>
             <div className="pemesanan">

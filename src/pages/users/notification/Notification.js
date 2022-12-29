@@ -39,7 +39,10 @@ const Notification = (props) => {
             <div>
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="m-b-50 heading-line">
-                  Notifications <i class="fa fa-bell text-muted"></i>
+                  <b>
+                    {" "}
+                    Notifications <i class="fa fa-bell text-muted"></i>
+                  </b>
                 </h4>
               </div>
               <section class="section-50">

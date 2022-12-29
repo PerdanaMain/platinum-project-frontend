@@ -45,6 +45,9 @@ const Sidebar = () => {
           <a class="list-group-item" href="/users/wishlist">
             <i class="fa fa-heart"></i>Wishlist
           </a>
+          <a class="list-group-item" href="/users/history">
+            <i class="fa fa-history"></i>History Payament
+          </a>
           <a class="list-group-item" href="/users">
             <i class="fa fa-bookmark"></i>Booking
           </a>

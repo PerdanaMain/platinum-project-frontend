@@ -149,7 +149,9 @@ const Profile = () => {
           <div className="col-lg-7 border-right col-profile">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h4 class=" heading-line">
-                Profile <i class="fa fa-user text-muted"></i>
+                <b>
+                  Profile <i class="fa fa-user text-muted"></i>
+                </b>
               </h4>
             </div>
             <div className="row mt-2">

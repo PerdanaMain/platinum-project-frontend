@@ -39,7 +39,9 @@ const Wallet = () => {
             <div className="row">
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="m-b-20 m-t-30 m-l-25 heading-line">
-                  Wallet <i class="fa fa-dollar text-muted"></i>
+                  <b>
+                    Wallet <i class="fa fa-dollar text-muted"></i>
+                  </b>
                 </h4>
               </div>
               <div className="col-lg-5">
