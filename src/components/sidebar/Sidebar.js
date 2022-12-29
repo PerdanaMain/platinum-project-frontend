@@ -32,23 +32,21 @@ const Sidebar = () => {
         <navside class="list-group">
           <a class="list-group-item" href="/users/profile">
             <i class="fa fa-user"></i>Profile
-            {/* <span class="badge badge-primary badge-pill">6</span> */}
           </a>
           <a class="list-group-item" href="/users/order">
-            <i class="fa fa-first-order"></i>My Order
+            <i class="fa fa-sticky-note"></i>My Order
           </a>
           <a class="list-group-item" href="/users/notification">
             <i class="fa fa-bell"></i>Notification
           </a>
           <a class="list-group-item" href="/users/wallet">
             <i class="fa fa-dollar"></i>E-Wallet
-            {/* <span class="badge badge-primary badge-pill">3</span> */}
           </a>
           <a class="list-group-item" href="/users/wishlist">
             <i class="fa fa-heart"></i>Wishlist
           </a>
           <a class="list-group-item" href="/users">
-            <i class="fa fa-tasks"></i>Booking
+            <i class="fa fa-bookmark"></i>Booking
           </a>
         </navside>
       </div>

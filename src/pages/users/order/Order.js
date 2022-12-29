@@ -63,12 +63,12 @@ const Order = () => {
           <Sidebar />
 
           <div className="col-lg-7 border-right">
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <h4 class=" heading-line">
+                My Order <i class="fa fa-sticky-note text-muted"></i>
+              </h4>
+            </div>
             <div className="pemesanan">
-              <div className="d-flex justify-content-between align-items-center mb-3">
-                <h4 class="m-b-20 m-t-30 heading-line">
-                  My Order <i class="fa fa-bell text-muted"></i>
-                </h4>
-              </div>
               <div className="part3-booking-hdr">
                 <div className="prt-hdr">
                   <div className="desc-tiket">
@@ -153,6 +153,9 @@ const Order = () => {
                           </div>
                           {data.usersPayment.booking.ticket_id_return === "" ||
                           data.usersPayment.booking.ticket_id_return ===
+                            null ? (
+                            ""
+                          ) : data.usersPayment.booking.ticketReturn ===
                             null ? (
                             ""
                           ) : (

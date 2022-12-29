@@ -24,7 +24,7 @@ const ActionButtons = (props) => {
   };
 
   return (
-    <ButtonToolbar className="action-booking">
+    <ButtonToolbar className="action-booking d-flex justify-content-center align-items-center">
       <ButtonGroup className="me-2 d-grid">
         {props.currentStep > 1 && (
           <Button variant="secondary" onClick={handleBack}>
@@ -133,7 +133,7 @@ const One = (props) => {
               </div>
             </div>
             <div className="row">
-              <div className="container mt-5">
+              <div className="container mt-5 steep">
                 <ActionButtons {...props} nextStep={validate} />
               </div>
             </div>
@@ -182,7 +182,7 @@ const Two = (props) => {
         <span style={{ color: "red" }}>{error}</span>
         <div className="container card ">
           <div className="card-header">
-            <h5 className="text-center">Detal Information</h5>
+            <h5 className="text-center">Detail Information</h5>
           </div>
           <div className="card-body">
             <div className="container text-center">
@@ -396,7 +396,7 @@ const Two = (props) => {
             </div>
           </div>
         </div>
-        <div className="container mt-5">
+        <div className="container mt-5 sleep">
           <ActionButtons {...props} nextStep={validate2} />
         </div>
       </div>
@@ -491,7 +491,7 @@ const Three = (props) => {
         </div>
         <div className="container card ">
           <div className="card-header">
-            <h5 className="text-center">Detal Information</h5>
+            <h5 className="text-center">Detail Information</h5>
           </div>
           <div className="card-body">
             <div className="container text-center">
@@ -705,7 +705,7 @@ const Three = (props) => {
             </div>
           </div>
         </div>
-        <div className="container mt-5">
+        <div className="container mt-5 slaap">
           <ActionButtons {...props} lastStep={handleLastStep} />
         </div>
       </div>

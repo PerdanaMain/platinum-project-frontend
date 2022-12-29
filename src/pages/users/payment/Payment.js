@@ -50,7 +50,7 @@ const Payment = () => {
       <Navbar />
       <div className="container rounded my-5">
         <div className="row justify-content-center">
-          <Sidebar className="col-sm-12" />
+          <Sidebar />
 
           <div className="col-lg-7">
             <div className="card-payment col-sm-12">

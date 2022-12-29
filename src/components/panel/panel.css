@@ -26,7 +26,7 @@
   margin-left: 3px;
   color: #fff;
 }
-.button-view{
+.button-view {
   background-color: #bababa;
   border-top-right-radius: 20px;
 }
@@ -76,7 +76,7 @@
     color: #fff;
   }
 
-  .col-md.sm-sm{
+  .col-md.sm-sm {
     margin-top: 10px;
   }
 
@@ -84,7 +84,7 @@
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
   }
-  .button-view{
+  .button-view {
     border-top-right-radius: 0px;
   }
 }

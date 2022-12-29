@@ -8,6 +8,7 @@ import "./navbar.css";
 
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import Badge from "react-bootstrap/Badge";
 
 // Import Images
 import flitLogo from "../../assets/landing/flit-4 1 (1).svg";
@@ -19,6 +20,7 @@ const Navbar = () => {
   const [name, setName] = useState("");
 
   const accessToken = sessionStorage.getItem("accessToken");
+  const fNotif = JSON.parse(localStorage.getItem("fNotif"));
 
   const navigate = useNavigate();
   const logoutHandler = async () => {
@@ -30,6 +32,7 @@ const Navbar = () => {
         },
       });
       sessionStorage.clear();
+      localStorage.clear();
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -95,14 +98,19 @@ const Navbar = () => {
           ) : (
             <DropdownButton
               id="dropdown-item-button"
-              className="me-5"
+              className="me-4"
               title={name}
             >
               <Dropdown.Item href="/users/profile">Profile</Dropdown.Item>
               <Dropdown.Item href="/users/order">My Order</Dropdown.Item>
               <Dropdown.Item href="/users/wishlist">Wish List</Dropdown.Item>
               <Dropdown.Item href="/users/notification">
-                Notification
+                Notification{" "}
+                {fNotif === null ? (
+                  ""
+                ) : (
+                  <Badge bg="danger">{Object.values(fNotif).length}</Badge>
+                )}
               </Dropdown.Item>
               <Dropdown.Item href="/users/wallet">Wallet</Dropdown.Item>
               <Dropdown.Item href="/users/history">
@@ -112,6 +120,23 @@ const Navbar = () => {
                 Logout
               </Dropdown.Item>
             </DropdownButton>
+          )}
+          {!accessToken ? (
+            ""
+          ) : (
+            <div className="lonceng me-5">
+              <i
+                className="fa fa-bell"
+                role={"button"}
+                onClick={() => navigate("/users/notification")}
+              >
+                {fNotif === null ? (
+                  ""
+                ) : (
+                  <Badge bg="danger">{Object.values(fNotif).length}</Badge>
+                )}
+              </i>
+            </div>
           )}
         </div>
       </div>

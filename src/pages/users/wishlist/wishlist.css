@@ -29,7 +29,6 @@
 }
 
 @media (min-width: 300px) and (max-width: 600px) {
-
   .text-cont p {
     width: 10px;
   }
@@ -57,7 +56,6 @@
     display: block;
     margin-left: 15px;
   }
-
 }
 
 /* end of wishlist */
