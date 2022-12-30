@@ -71,9 +71,7 @@ const Profile = () => {
   };
   const saveHandler = async (e) => {
     e.preventDefault();
-    let formData = new FormData();
-    formData.append("file", file);
-    console.log({ formData, file });
+
     try {
       await axios.put(
         `${server}/v1/api/users/profile`,
@@ -94,10 +92,10 @@ const Profile = () => {
           },
         }
       );
-      const post = axios.post(
+      const post = await axios.post(
         `${server}/v1/api/upload`,
         {
-          file: formData,
+          file,
         },
         {
           headers: {
@@ -105,7 +103,6 @@ const Profile = () => {
           },
         }
       );
-      console.log(post.data);
       setMsg("Profile Updated Successfully");
       return setShow(true);
     } catch (error) {
@@ -118,210 +115,189 @@ const Profile = () => {
     <div>
       <Navbar />
       <div className="container rounded bg-white mt-5 mb-5">
-        <div className="row">
-          <div className="col-xl-5 border-right">
-            <div className="d-flex flex-column align-items-center text-center p-3 py-5">
-              {preview ? (
-                <img
-                  className="rounded-circle profile-pict mt-5"
-                  alt="profile-pict"
-                  src={preview}
-                />
-              ) : preview === null ? (
-                <Spinner animation="border" role="status">
-                  <span className="visually-hidden">Loading...</span>
-                </Spinner>
-              ) : (
-                <img
-                  className="rounded-circle profile-pict mt-5"
-                  alt="profile-pict"
-                  src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
-                />
-              )}
+        <div className="row justify-content-center">
+          <Sidebar
+            preview={preview}
+            name={firstName + " " + lastName}
+            email={email}
+          />
 
-              <span className="font-weight-bold mt-3">
-                {firstName + " " + lastName}
-              </span>
-              <span className="text-black-50">{email}</span>
-              <span> </span>
+          <div className="col-lg-7 border-right col-profile">
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <h4 class=" heading-line">
+                <b>
+                  Profile <i class="fa fa-user text-muted"></i>
+                </b>
+              </h4>
             </div>
-            <Sidebar />
-          </div>
-          <div className="col-xl-7 border-right">
-            <div className="p-3 py-5">
-              <div className="d-flex justify-content-between align-items-center mb-3">
-                <h4 className="text-right">Profile Settings</h4>
+            <div className="row mt-2">
+              <div className="col-md-6">
+                <label className="form-label">First Name</label>
+                <input
+                  type="text"
+                  placeholder="Nina"
+                  id="firstname"
+                  className="form-control"
+                  value={firstName}
+                  onChange={(e) => {
+                    setFirstName(e.target.value);
+                  }}
+                  required
+                />
               </div>
+              <div className="col-md-6">
+                <label className="form-label">Last Name</label>
+                <input
+                  type="text"
+                  placeholder="Boobo"
+                  id="lastname"
+                  className="form-control"
+                  required
+                  value={lastName}
+                  onChange={(e) => {
+                    setLastName(e.target.value);
+                  }}
+                />
+              </div>
+            </div>
+            <div className="col-md-12">
+              <label className="form-label">Change Profile</label>
+              <div className="form-group">
+                <input
+                  type="file"
+                  className="form-control"
+                  onChange={loadImage}
+                />
+              </div>
+            </div>
+            <div className="row ">
+              <div className="col-md-12">
+                <label className="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  className="form-control"
+                  required
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  placeholder="example100@gmail.com"
+                />
+              </div>
+              <div className="col-md-12">
+                <label className="form-label">No HP</label>
+                <input
+                  type="text"
+                  id="Username"
+                  className="form-control"
+                  required
+                  value={phone}
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                  }}
+                  placeholder="08214333846"
+                />
+              </div>
+              <div className="col-md-12">
+                <label className="form-label">Country</label>
+                <input
+                  type="text"
+                  id="Username"
+                  className="form-control"
+                  required
+                  value={country}
+                  onChange={(e) => {
+                    setCountry(e.target.value);
+                  }}
+                  placeholder="input country"
+                />
+              </div>
+              <div className="col-md-12">
+                <label className="form-label">Province</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  required
+                  placeholder="input province"
+                  value={province}
+                  onChange={(e) => {
+                    setProvince(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="col-md-12">
+                <label className="form-label">City</label>
+                <input
+                  type="text"
+                  id="Username"
+                  className="form-control"
+                  required
+                  placeholder="input city"
+                  value={city}
+                  onChange={(e) => {
+                    setCity(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="col-md-12">
+                <label className="form-label">Address</label>
+                <input
+                  type="text"
+                  id="Username"
+                  className="form-control"
+                  required
+                  value={address}
+                  onChange={(e) => {
+                    setAddress(e.target.value);
+                  }}
+                  placeholder="Perumahan Denanyar Indah Blok-R5"
+                />
+              </div>
+              <div className="col-md-12">
+                <label className="form-label">Postal Code</label>
+                <input
+                  type="text"
+                  id="Username"
+                  className="form-control"
+                  required
+                  placeholder="098xx"
+                  value={postalCode}
+                  onChange={(e) => {
+                    setPostalCode(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="col-md-12">
+                <label className="form-label">Birthday</label>
+                <input
+                  type="date"
+                  className="form-control"
+                  id="birthday"
+                  value={birthDate}
+                  onChange={(e) => {
+                    setBirthDate(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+            </div>
 
-              <div className="row mt-2">
-                <div className="col-md-6">
-                  <label className="form-label">First Name</label>
-                  <input
-                    type="text"
-                    placeholder="Nina"
-                    id="firstname"
-                    className="form-control"
-                    value={firstName}
-                    onChange={(e) => {
-                      setFirstName(e.target.value);
-                    }}
-                    required
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="form-label">Last Name</label>
-                  <input
-                    type="text"
-                    placeholder="Boobo"
-                    id="lastname"
-                    className="form-control"
-                    required
-                    value={lastName}
-                    onChange={(e) => {
-                      setLastName(e.target.value);
-                    }}
-                  />
-                </div>
-              </div>
-              <div className="col-md-6 ">
-                <label className="form-label">Change Profile</label>
-                <div className="form-group">
-                  <input
-                    type="file"
-                    className="form-control"
-                    onChange={loadImage}
-                  />
-                </div>
-              </div>
-              <div className="row ">
-                <div className="col-md-12">
-                  <label className="form-label">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="form-control"
-                    required
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                    }}
-                    placeholder="example100@gmail.com"
-                  />
-                </div>
-                <div className="col-md-12">
-                  <label className="form-label">No HP</label>
-                  <input
-                    type="text"
-                    id="Username"
-                    className="form-control"
-                    required
-                    value={phone}
-                    onChange={(e) => {
-                      setPhone(e.target.value);
-                    }}
-                    placeholder="08214333846"
-                  />
-                </div>
-                <div className="col-md-12">
-                  <label className="form-label">Country</label>
-                  <input
-                    type="text"
-                    id="Username"
-                    className="form-control"
-                    required
-                    value={country}
-                    onChange={(e) => {
-                      setCountry(e.target.value);
-                    }}
-                    placeholder="input country"
-                  />
-                </div>
-                <div className="col-md-12">
-                  <label className="form-label">Province</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    required
-                    placeholder="input province"
-                    value={province}
-                    onChange={(e) => {
-                      setProvince(e.target.value);
-                    }}
-                  />
-                </div>
-                <div className="col-md-12">
-                  <label className="form-label">City</label>
-                  <input
-                    type="text"
-                    id="Username"
-                    className="form-control"
-                    required
-                    placeholder="input city"
-                    value={city}
-                    onChange={(e) => {
-                      setCity(e.target.value);
-                    }}
-                  />
-                </div>
-                <div className="col-md-12">
-                  <label className="form-label">Address</label>
-                  <input
-                    type="text"
-                    id="Username"
-                    className="form-control"
-                    required
-                    value={address}
-                    onChange={(e) => {
-                      setAddress(e.target.value);
-                    }}
-                    placeholder="Perumahan Denanyar Indah Blok-R5"
-                  />
-                </div>
-                <div className="col-md-12">
-                  <label className="form-label">Postal Code</label>
-                  <input
-                    type="text"
-                    id="Username"
-                    className="form-control"
-                    required
-                    placeholder="098xx"
-                    value={postalCode}
-                    onChange={(e) => {
-                      setPostalCode(e.target.value);
-                    }}
-                  />
-                </div>
-                <div className="col-md-12">
-                  <label className="form-label">Birthday</label>
-                  <input
-                    type="date"
-                    className="form-control"
-                    id="birthday"
-                    value={birthDate}
-                    onChange={(e) => {
-                      setBirthDate(e.target.value);
-                    }}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="mt-5 text-center">
-                <a
-                  href="/users"
-                  className="btn btn-danger profile-button me-3"
-                  type="button"
-                >
-                  Cancel
-                </a>
-                <button
-                  className="btn btn-success profile-button"
-                  type="button"
-                  onClick={saveHandler}
-                >
-                  Save Profile
-                </button>
-              </div>
+            <div className="mt-5 text-center">
+              <a
+                href="/users"
+                className="btn btn-danger profile-button me-3"
+                type="button"
+              >
+                Cancel
+              </a>
+              <button
+                className="btn btn-success profile-button"
+                type="button"
+                onClick={saveHandler}
+              >
+                Save Profile
+              </button>
             </div>
           </div>
         </div>
@@ -332,7 +308,7 @@ const Profile = () => {
       ) : (
         <Modal show={show}>
           <Modal.Header>
-            <Modal.Title>Sorry</Modal.Title>
+            <Modal.Title>{msg ? "Great" : "Sorry"}</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>

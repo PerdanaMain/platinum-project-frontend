@@ -49,11 +49,10 @@ const Payment = () => {
     <div>
       <Navbar />
       <div className="container rounded my-5">
-        <div className="row">
-          <div className="col-xl-5">
-            <Sidebar className="col-sm-12" />
-          </div>
-          <div className="col-xl-7">
+        <div className="row justify-content-center">
+          <Sidebar />
+
+          <div className="col-lg-7">
             <div className="card-payment col-sm-12">
               <h1>Bill Details</h1>
               <hr />

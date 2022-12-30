@@ -273,6 +273,34 @@ const Panel = (props) => {
     }
   };
 
+  const addWishlistHandler = async (ticketId) => {
+    const accessToken = sessionStorage.getItem("accessToken");
+    if (!accessToken) {
+      setErr("You Must Sign In before continue");
+      return setShow(true);
+    }
+
+    try {
+      const post = await axios.post(
+        `${server}/v1/api/wishlists/create`,
+        {
+          ticket_id_departure: parseInt(ticketId),
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      setErr(post.data.msg);
+      setShow(true);
+    } catch (error) {
+      console.log(error.message);
+      setErr(error.message);
+      setShow(true);
+    }
+  };
+
   // clg for debug
 
   return (
@@ -498,55 +526,52 @@ const Panel = (props) => {
                 <div className="card-header">
                   <h1>Ticket Information</h1>
                 </div>
-                <div className="card-body mb-3">
-                  <h3 className="text-center">Round Trip Ticket</h3>
-                  <div className="container card mb-3">
-                    <div className="card-body">
-                      <div className="row">
-                        <div className="col-md-6">
-                          <p>
-                            {firstTicket.departureAirport}{" "}
-                            {firstTicket.departureAirport !== "" ? " -> " : ""}
-                            {firstTicket.arrivalAirport}
-                          </p>
-                        </div>
-                        <div className="col-md-6">
-                          {firstTicket.price !== "" ? (
-                            <div>
-                              <p>Harga Tiket</p>
-                              <p>
-                                {formatter.format(parseInt(firstTicket.price))}
-                              </p>
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                        </div>
+
+                <div className="mb-3">
+                  <h3 className="text-center my-3">Round Trip Ticket</h3>
+                  <div className="border mb-3">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <p className="p-3">
+                          {firstTicket.departureAirport}{" "}
+                          {firstTicket.departureAirport !== "" ? " -> " : ""}
+                          {firstTicket.arrivalAirport}
+                        </p>
+                      </div>
+                      <div className="col-md-6">
+                        {firstTicket.price !== "" ? (
+                          <div className="p-3">
+                            <p>Harga Tiket</p>
+                            <p>
+                              {formatter.format(parseInt(firstTicket.price))}
+                            </p>
+                          </div>
+                        ) : (
+                          ""
+                        )}
                       </div>
                     </div>
                   </div>
-                  <div className="container card mb-3">
-                    <div className="card-body">
-                      <div className="row">
-                        <div className="col-md-6">
-                          <p>
-                            {secondTicket.departureAirport}{" "}
-                            {secondTicket.departureAirport !== "" ? " -> " : ""}
-                            {secondTicket.arrivalAirport}
-                          </p>
-                        </div>
-                        <div className="col-md-6">
-                          {secondTicket.price !== "" ? (
-                            <div>
-                              <p>Harga Tiket</p>
-                              <p>
-                                {formatter.format(parseInt(secondTicket.price))}
-                              </p>
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                        </div>
+                  <div className="border mb-3">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <p className="p-3">
+                          {secondTicket.departureAirport}{" "}
+                          {secondTicket.departureAirport !== "" ? " -> " : ""}
+                          {secondTicket.arrivalAirport}
+                        </p>
+                      </div>
+                      <div className="col-md-6">
+                        {secondTicket.price !== "" ? (
+                          <div className="p-3">
+                            <p>Harga Tiket</p>
+                            <p>
+                              {formatter.format(parseInt(secondTicket.price))}
+                            </p>
+                          </div>
+                        ) : (
+                          ""
+                        )}
                       </div>
                     </div>
                   </div>
@@ -614,28 +639,47 @@ const Panel = (props) => {
                             </div>
                           </div>
                           <div className="col-md">
-                            <div class="d-grid">
-                              <button
-                                class="btn btn-primary"
-                                type="button"
-                                onClick={() => {
-                                  setFirstTicket({
-                                    ticket_id: data.id,
-                                    departureAirport:
-                                      data.flight.DepartureTerminal.code,
-                                    arrivalAirport:
-                                      data.flight.ArrivalTerminal.code,
-                                    departureDate: data.flight.departureDate,
-                                    departureTime: data.flight.departureTime,
-                                    arrivalDate: data.flight.arrivalDate,
-                                    arrivalTime: data.flight.arrivalTime,
-                                    price: data.price,
-                                    class: data.class.type,
-                                  });
-                                }}
-                              >
-                                Book Now
-                              </button>
+                            <div className="row">
+                              <div className="col-md-6">
+                                <div class="d-grid">
+                                  <button
+                                    class="btn btn-outline-primary"
+                                    type="button"
+                                    onClick={() => {
+                                      setFirstTicket({
+                                        ticket_id: data.id,
+                                        departureAirport:
+                                          data.flight.DepartureTerminal.code,
+                                        arrivalAirport:
+                                          data.flight.ArrivalTerminal.code,
+                                        departureDate:
+                                          data.flight.departureDate,
+                                        departureTime:
+                                          data.flight.departureTime,
+                                        arrivalDate: data.flight.arrivalDate,
+                                        arrivalTime: data.flight.arrivalTime,
+                                        price: data.price,
+                                        class: data.class.type,
+                                      });
+                                    }}
+                                    style={{ marginTop: "15px" }}
+                                  >
+                                    Book Now
+                                  </button>
+                                </div>
+                              </div>
+                              <div className="col-md-6">
+                                <div className="d-grid">
+                                  <button
+                                    className="btn btn-outline-danger mt-3"
+                                    onClick={() => {
+                                      addWishlistHandler(data.id);
+                                    }}
+                                  >
+                                    Add To Wishlist
+                                  </button>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -674,28 +718,47 @@ const Panel = (props) => {
                             </div>
                           </div>
                           <div className="col-md">
-                            <div class="d-grid">
-                              <button
-                                class="btn btn-primary"
-                                type="button"
-                                onClick={() => {
-                                  setSecondTicket({
-                                    ticket_id: data.id,
-                                    departureAirport:
-                                      data.flight.DepartureTerminal.code,
-                                    arrivalAirport:
-                                      data.flight.ArrivalTerminal.code,
-                                    departureDate: data.flight.departureDate,
-                                    departureTime: data.flight.departureTime,
-                                    arrivalDate: data.flight.arrivalDate,
-                                    arrivalTime: data.flight.arrivalTime,
-                                    price: data.price,
-                                    class: data.class.type,
-                                  });
-                                }}
-                              >
-                                Book Now
-                              </button>
+                            <div className="row">
+                              <div className="col-md-6">
+                                <div class="d-grid">
+                                  <button
+                                    class="btn btn-primary"
+                                    type="button"
+                                    onClick={() => {
+                                      setSecondTicket({
+                                        ticket_id: data.id,
+                                        departureAirport:
+                                          data.flight.DepartureTerminal.code,
+                                        arrivalAirport:
+                                          data.flight.ArrivalTerminal.code,
+                                        departureDate:
+                                          data.flight.departureDate,
+                                        departureTime:
+                                          data.flight.departureTime,
+                                        arrivalDate: data.flight.arrivalDate,
+                                        arrivalTime: data.flight.arrivalTime,
+                                        price: data.price,
+                                        class: data.class.type,
+                                      });
+                                    }}
+                                    style={{ marginTop: "15px" }}
+                                  >
+                                    Book Now
+                                  </button>
+                                </div>
+                              </div>
+                              <div className="col-md-6">
+                                <div className="d-grid">
+                                  <button
+                                    className="btn btn-outline-danger mt-3"
+                                    onClick={() => {
+                                      addWishlistHandler(data.id);
+                                    }}
+                                  >
+                                    Add To Wishlist
+                                  </button>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -918,9 +981,6 @@ const Panel = (props) => {
                               {data.flight.ArrivalTerminal.country}
                             </p>
                           </div>
-                          <button className="btn btn-outline-danger mt-3">
-                            Add To Wishlist
-                          </button>
                         </div>
                         <div className="col-md">
                           <div className="card-body text-center">
@@ -939,28 +999,45 @@ const Panel = (props) => {
                           </div>
                         </div>
                         <div className="col-md">
-                          <div class="d-grid">
-                            <button
-                              class="btn btn-primary"
-                              type="button"
-                              onClick={() => {
-                                setFirstTicket({
-                                  ticket_id: data.id,
-                                  departureAirport:
-                                    data.flight.DepartureTerminal.code,
-                                  arrivalAirport:
-                                    data.flight.ArrivalTerminal.code,
-                                  departureDate: data.flight.departureDate,
-                                  departureTime: data.flight.departureTime,
-                                  arrivalDate: data.flight.arrivalDate,
-                                  arrivalTime: data.flight.arrivalTime,
-                                  price: data.price,
-                                  class: data.class.type,
-                                });
-                              }}
-                            >
-                              Book Now
-                            </button>
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div class="d-grid">
+                                <button
+                                  class="btn btn-outline-primary"
+                                  type="button"
+                                  onClick={() => {
+                                    setFirstTicket({
+                                      ticket_id: data.id,
+                                      departureAirport:
+                                        data.flight.DepartureTerminal.code,
+                                      arrivalAirport:
+                                        data.flight.ArrivalTerminal.code,
+                                      departureDate: data.flight.departureDate,
+                                      departureTime: data.flight.departureTime,
+                                      arrivalDate: data.flight.arrivalDate,
+                                      arrivalTime: data.flight.arrivalTime,
+                                      price: data.price,
+                                      class: data.class.type,
+                                    });
+                                  }}
+                                  style={{ marginTop: "15px" }}
+                                >
+                                  Book Now
+                                </button>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="d-grid">
+                                <button
+                                  className="btn btn-outline-danger mt-3"
+                                  onClick={() => {
+                                    addWishlistHandler(data.id);
+                                  }}
+                                >
+                                  Add To Wishlist
+                                </button>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1114,14 +1191,23 @@ const Panel = (props) => {
       ) : (
         <Modal show={show}>
           <Modal.Header>
-            <Modal.Title>Sorry</Modal.Title>
+            <Modal.Title>
+              {err === "Wishlist added" ? "Great" : "Sorry"}
+            </Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
-            <div className="text-danger d-flex align-items-center">
-              <i className="fa-solid fa-circle-exclamation"></i>
-              <div className="ps-3">{err}</div>
-            </div>
+            {err === "Wishlist added" ? (
+              <div className="text-success d-flex align-items-center">
+                <i className="bi bi-check-all"></i>
+                <div className="ps-3">{err}</div>
+              </div>
+            ) : (
+              <div className="text-danger d-flex align-items-center">
+                <i className="bi bi-exclamation-circle"></i>
+                <div className="ps-3">{err}</div>
+              </div>
+            )}
           </Modal.Body>
 
           <Modal.Footer>

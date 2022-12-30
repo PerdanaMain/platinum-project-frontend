@@ -51,20 +51,18 @@ const History = () => {
   return (
     <div>
       <Navbar />
-      <div className="container rounded bg-white my-5">
-        <div className="row">
-          <div className="col-xl-5 border-right">
-            <Sidebar />
-          </div>
-          <div className="col-xl-7 border-right">
-            <p
-              style={{
-                marginLeft: "22px",
-                fontSize: "23px",
-              }}
-            >
-              <b>History Payment</b>
-            </p>
+      <div className="container rounded bg-white mt-5 mb-5">
+        <div className="row justify-content-center">
+          <Sidebar />
+
+          <div className="col-lg-7 border-right">
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <h4 class=" heading-line">
+                <b>
+                  History Payment <i class="fa fa-sticky-note text-muted"></i>
+                </b>
+              </h4>
+            </div>
 
             {history === "" ? (
               <div>

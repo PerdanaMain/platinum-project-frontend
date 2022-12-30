@@ -96,25 +96,27 @@ const User = () => {
                       className="rounded-circle profile-pict mt-5"
                     />
                     <ul className="list-group list-group-horizontal">
-                      <li>Name</li>
-                      <li>{data.firstname + " " + data.lastname}</li>
+                      <li className="title-profile">Name</li>
+                      <li className="data-profile">
+                        {data.firstname + " " + data.lastname}
+                      </li>
                     </ul>
                     <ul className="list-group list-group-horizontal">
-                      <li>Gender</li>
-                      <li>{data.gender}</li>
+                      <li className="title-profile">Gender</li>
+                      <li className="data-profile">{data.gender}</li>
                     </ul>
                     <ul className="list-group list-group-horizontal">
-                      <li>Phone</li>
-                      <li>{data.phone}</li>
+                      <li className="title-profile">Phone</li>
+                      <li className="data-profile">{data.phone}</li>
                     </ul>
                     <ul className="list-group list-group-horizontal">
-                      <li>Email</li>
-                      <li>{data.email}</li>
+                      <li className="title-profile">Email</li>
+                      <li className="data-profile">{data.email}</li>
                     </ul>
 
                     <ul className="list-group list-group-horizontal">
-                      <li>Address</li>
-                      <li>
+                      <li className="title-profile">Address</li>
+                      <li className="data-profile">
                         {data.address.homeAddress +
                           " " +
                           data.address.city +
